@@ -9,7 +9,8 @@
     "kbar": "^0.1.0-beta.36",
     "next": "latest",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-feather": "^2.0.10"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
