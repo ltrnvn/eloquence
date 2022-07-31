@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'react-feather'
 
 const ExternalLink = (props) => {
     return (
-        <div className="inline-block">
+        <span className="inline-block">
             <a
                 href={props.link}
                 target="_blank"
@@ -16,7 +16,7 @@ const ExternalLink = (props) => {
                     className="ml-0.5 inline -translate-y-[2px]"
                 />
             </a>
-        </div>
+        </span>
     )
 }
 

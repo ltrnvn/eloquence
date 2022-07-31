@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import quotes from '../data/quotes'
 
 const Footer = () => {
-    var randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+    const [randomQuote, setrandomQuote] = useState()
+
+    useEffect(() => {
+        setrandomQuote(quotes[Math.floor(Math.random() * quotes.length)])
+    }, [])
 
     return (
         <footer className="py-3 text-sm text-gray-500 border-t border-gray-600">
