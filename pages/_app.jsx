@@ -4,7 +4,7 @@ import '/styles/globals.css'
 
 const _app = ({ Component, pageProps }) => {
     return (
-        <KBarProvider>
+        <>
             <Head>
                 <meta charSet="utf-8" />
                 <meta
@@ -25,7 +25,7 @@ const _app = ({ Component, pageProps }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
-        </KBarProvider>
+        </>
     )
 }
 
