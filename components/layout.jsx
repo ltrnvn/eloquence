@@ -18,6 +18,7 @@ const Layout = (props) => {
             name: 'Home',
             shortcut: ['h'],
             keywords: 'home',
+            section: 'Pages',
             perform: () => (window.location.pathname = '/'),
         },
         {
@@ -25,7 +26,15 @@ const Layout = (props) => {
             name: 'Games',
             shortcut: ['g'],
             keywords: 'games',
+            section: 'Pages',
             perform: () => (window.location.pathname = 'games'),
+        },
+        {
+            id: 'theme',
+            name: 'Change theme...',
+            shortcut: ['t'],
+            keywords: 'theme',
+            section: 'Utilities',
         },
     ]
     return (
