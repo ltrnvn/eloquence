@@ -1,3 +1,7 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital@1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

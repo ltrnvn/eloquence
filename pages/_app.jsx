@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import { KBarProvider } from 'kbar'
 import '/styles/globals.css'
+import '@fontsource/heebo/400.css'
+import '@fontsource/heebo/700.css'
+import '@fontsource/newsreader/400-italic.css'
 
 const _app = ({ Component, pageProps }) => {
     return (
