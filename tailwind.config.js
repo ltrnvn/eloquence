@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+console.log(defaultTheme.fontFamily)
 module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx}',
@@ -7,40 +9,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                text: [
-                    'Heebo',
-                    'system-ui',
-                    '-apple-system',
-                    'Segoe UI',
-                    'Roboto',
-                    'Helvetica Neue',
-                    'Arial',
-                    'Liberation Sans',
-                    'sans-serif',
-                    'Apple Color Emoji',
-                    'Segoe UI Emoji',
-                    'Segoe UI Symbol',
-                    'Noto Color Emoji',
-                ],
-                serif: [
-                    'Newsreader',
-                    'ui-serif',
-                    'Georgia',
-                    'Cambria',
-                    'Times New Roman',
-                    'Times',
-                    'serif',
-                ],
-                mono: [
-                    'IBM Plex Mono',
-                    'SFMono-Regular',
-                    'Menlo',
-                    'Monaco',
-                    'Consolas',
-                    'Liberation Mono',
-                    'Courier New',
-                    'monospace',
-                ],
+                sans: ['Heebo', ...defaultTheme.fontFamily.sans],
+                serif: ['Newsreader', ...defaultTheme.fontFamily.serif],
             },
             fontSize: {
                 xs: ['0.75rem', '1.75'],
