@@ -69,7 +69,9 @@ function RenderResults() {
             items={results}
             onRender={({ item, active }) => {
                 return typeof item === 'string' ? (
-                    <div className="px-4 py-2 text-gray-400">{item}</div>
+                    <div className="text-sm px-4 py-2 text-gray-400">
+                        {item}
+                    </div>
                 ) : (
                     <div
                         className={`flex items-center justify-between cursor-pointer px-4 py-2 ${
