@@ -12,7 +12,7 @@ export default function Home() {
                     front-end engineer
                 </span>{' '}
                 at{' '}
-                <ExternalLink link="https://hager.com" text="Hager" size="16" />{' '}
+                <ExternalLink link="https://hager.com" text="Hager" size="18" />{' '}
                 a leading supplier of solutions and services for electrical
                 installations.
             </div>

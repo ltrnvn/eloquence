@@ -1,5 +1,4 @@
 import React from 'react'
-import ExternalLink from '/components/externalLink'
 
 const Paragraph = (props) => {
     return (
