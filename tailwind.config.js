@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
-console.log(defaultTheme.fontFamily)
+
 module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx}',
@@ -20,7 +20,22 @@ module.exports = {
                 xl: ['1.25rem', '1.75'],
                 h1: ['2.25rem', '1.5'],
             },
+            animation: {
+                enter: 'enter 0.6s forwards',
+            },
+            keyframes: {
+                enter: {
+                    '0%': {
+                        opacity: 0,
+                        transform: 'translateY(0.5rem)',
+                    },
+                    to: {
+                        opacity: 1,
+                        transform: 'none',
+                    },
+                },
+            },
         },
     },
-    plugins: [],
+    plugins: [require('tailwindcss-animation-delay')],
 }

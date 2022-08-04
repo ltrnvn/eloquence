@@ -6,9 +6,11 @@ const Layout = (props) => {
     return (
         <Menu>
             <main className="max-w-3xl mx-auto py-28 px-4 sm:py-42">
-                <h1 className="font-bold text-h1 text-black dark:text-white">
-                    {props.title}
-                </h1>
+                {props.title && (
+                    <h1 className="font-bold text-h1 text-black dark:text-white">
+                        {props.title}
+                    </h1>
+                )}
                 {props.children}
             </main>
             <Footer />

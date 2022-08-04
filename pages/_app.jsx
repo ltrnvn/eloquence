@@ -1,13 +1,25 @@
+import { MDXProvider } from '@mdx-js/react'
 import Head from 'next/head'
-import { KBarProvider } from 'kbar'
 import '/styles/globals.css'
 import '@fontsource/heebo/400.css'
 import '@fontsource/heebo/700.css'
 import '@fontsource/newsreader/400-italic.css'
+import ExternalLink from '../components/externalLink'
+import H1Title from '../components/h1Title'
+import H2Title from '../components/h2Title'
+import Paragraph from '../components/paragraph'
+
+const components = {
+    h1: H1Title,
+    h2: H2Title,
+    p: Paragraph,
+    a: ExternalLink,
+    em: (props) => <em {...props} className="font-serif italic text-xl" />,
+}
 
 const _app = ({ Component, pageProps }) => {
     return (
-        <>
+        <MDXProvider components={components}>
             <Head>
                 <meta charSet="utf-8" />
                 <meta
@@ -28,7 +40,7 @@ const _app = ({ Component, pageProps }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
-        </>
+        </MDXProvider>
     )
 }
 
