@@ -1,16 +1,11 @@
 import React from 'react'
+import useAnimationDelay from '/hooks/useAnimationDelay'
 
 const Paragraph = (props) => {
+    const animationDelay = useAnimationDelay(props.itemCount)
+
     return (
-        <p
-            className="mb-6 animate-enter opacity-0"
-            style={{
-                // Setting a maximum delay of 750ms
-                animationDelay: `${
-                    (props.delay < 5 ? props.delay + 1 : 6) * 150
-                }ms`,
-            }}
-        >
+        <p className="mb-6 animate-enter opacity-0" style={animationDelay}>
             {props.children}
         </p>
     )

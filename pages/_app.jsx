@@ -7,21 +7,22 @@ import '@fontsource/newsreader/400-italic.css'
 import ExternalLink from '../components/externalLink'
 import H1Title from '../components/h1Title'
 import H2Title from '../components/h2Title'
+import H3Title from '../components/h3Title'
 import Paragraph from '../components/paragraph'
 
 const _app = ({ Component, pageProps }) => {
-    let paragraphCount = 0
-    const components = {
-        h1: H1Title,
-        h2: H2Title,
-        h3: (props) => <h3 {...props} className="mt-12 mb-6 text-gray-600" />,
-        p: (props) => <Paragraph {...props} delay={paragraphCount++} />,
+    let itemCount = 0
+    const MDXComponents = {
+        h1: (props) => <H1Title {...props} itemCount={itemCount++} />,
+        h2: (props) => <H2Title {...props} itemCount={itemCount++} />,
+        h3: (props) => <H3Title {...props} itemCount={itemCount++} />,
+        p: (props) => <Paragraph {...props} itemCount={itemCount++} />,
         a: ExternalLink,
         em: (props) => <em {...props} className="font-serif italic text-xl" />,
     }
 
     return (
-        <MDXProvider components={components}>
+        <MDXProvider components={MDXComponents}>
             <Head>
                 <meta charSet="utf-8" />
                 <meta

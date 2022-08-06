@@ -1,12 +1,16 @@
 import React from 'react'
+import useAnimationDelay from '/hooks/useAnimationDelay'
 
 const H1Title = (props) => {
+    const animationDelay = useAnimationDelay(props.itemCount)
+
     return (
-        <>
-            <h1 className="font-bold text-h1 text-black animate-enter opacity-0 dark:text-white">
-                {props.children}
-            </h1>
-        </>
+        <h1
+            className="font-bold text-h1 text-black animate-enter opacity-0 dark:text-white"
+            style={animationDelay}
+        >
+            {props.children}
+        </h1>
     )
 }
 
