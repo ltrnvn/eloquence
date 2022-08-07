@@ -18,7 +18,7 @@ const MenuButton = () => {
     const DesktopButton = () => {
         return (
             <div
-                className="absolute top-[-20px] inset-x-0 mx-auto text-center cursor-pointer text-menu bold text-slate-600 animate-enter opacity-0 transition-all duration-500 hover:text-gray-300 hover:translate-y-10"
+                className="absolute top-[-20px] inset-x-0 mx-auto text-center cursor-pointer text-menu bold text-slate-600 animate-enter opacity-0 transition-all duration-500 hover:text-gray-300 hover:pt-10"
                 onClick={toggleMenu}
             >
                 {menuText}
