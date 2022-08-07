@@ -1,47 +1,23 @@
 import { useKBar } from 'kbar'
-import React, { useEffect, useState } from 'react'
-import { isMobile } from 'react-device-detect'
 
 const MenuButton = () => {
     const menuText = 'MENU'
-    const [checkMobile, setCheckMobile] = useState()
-    const [renderButton, setRenderButton] = useState(false)
     const kbar = useKBar()
-
-    useEffect(() => {
-        setCheckMobile(isMobile)
-        setRenderButton(true)
-    }, [])
 
     const toggleMenu = () => {
         kbar.query.toggle()
     }
 
-    const DesktopButton = () => {
-        return (
-            <div
-                className="absolute top-[-20px] inset-x-0 mx-auto text-center cursor-pointer text-menu bold text-slate-600 animate-enter opacity-0 transition-all duration-500 hover:text-gray-300 hover:pt-10"
-                onClick={toggleMenu}
-            >
-                {menuText}
-            </div>
-        )
-    }
-    const MobileButton = () => {
-        return (
-            <div
-                className="flex items-center justify-center text-xs mx-auto mb-12 w-[80px] h-[80px] cursor-pointer text-center border-[1px] animate-enter opacity-0 rounded-full border-slate-800 transition-all duration-300 hover:border-gray-400 hover:text-gray-400 dark:border-white dark:text-white"
-                onClick={toggleMenu}
-            >
-                {menuText}
-            </div>
-        )
-    }
+    const desktopClasses = `sm:absolute sm:top-[-1.5rem] sm:inset-x-0 sm:border-0 sm:text-menu tracking-wider sm:text-slate-600 sm:duration-500 sm:hover:text-gray-300 sm:hover:pt-16`
+    const mobileClasses = `flex items-center justify-center text-xs mb-12 w-[80px] h-[80px] border-[1px] rounded-full border-slate-800 duration-300 hover:border-gray-400 hover:text-gray-400 dark:border-white dark:text-white`
 
     return (
-        <>
-            {renderButton && checkMobile ? <MobileButton /> : <DesktopButton />}
-        </>
+        <div
+            className={`${desktopClasses} ${mobileClasses} text-center transition-all mx-auto cursor-pointer animate-enter opacity-0`}
+            onClick={toggleMenu}
+        >
+            {menuText}
+        </div>
     )
 }
 
