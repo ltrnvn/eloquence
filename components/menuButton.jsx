@@ -1,10 +1,15 @@
 import { useKBar } from 'kbar'
-import React from 'react'
-import { isMobile, isDesktop } from 'react-device-detect'
+import React, { useEffect, useState } from 'react'
+import { isMobile } from 'react-device-detect'
 
 const MenuButton = () => {
-    const kbar = useKBar()
     const menuText = 'MENU'
+    const [checkMobile, setCheckMobile] = useState()
+    const kbar = useKBar()
+
+    useEffect(() => {
+        setCheckMobile(isMobile)
+    }, [])
 
     const toggleMenu = () => {
         kbar.query.toggle()
@@ -31,7 +36,7 @@ const MenuButton = () => {
         )
     }
 
-    return <>{isMobile && isMobile ? <MobileButton /> : <DesktopButton />}</>
+    return <>{checkMobile ? <MobileButton /> : <DesktopButton />}</>
 }
 
 export default MenuButton
