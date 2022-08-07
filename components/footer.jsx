@@ -9,7 +9,7 @@ const Footer = () => {
     }, [])
 
     return (
-        <footer className="py-3 text-sm mt-12 text-gray-400 border-t border-gray-600">
+        <footer className="py-3 text-sm text-gray-400 border-t border-gray-600">
             <p className="px-4 max-w-3xl mx-auto">{randomQuote}</p>
         </footer>
     )
