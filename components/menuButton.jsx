@@ -1,10 +1,11 @@
 import { useKBar } from 'kbar'
 import React from 'react'
-import { isMobile } from 'react-device-detect'
+import { isMobile, isDesktop } from 'react-device-detect'
 
 const MenuButton = () => {
     const kbar = useKBar()
     const menuText = 'MENU'
+
     const toggleMenu = () => {
         kbar.query.toggle()
     }
@@ -30,7 +31,7 @@ const MenuButton = () => {
         )
     }
 
-    return <>{isMobile ? <MobileButton /> : <DesktopButton />}</>
+    return <>{isMobile && isMobile ? <MobileButton /> : <DesktopButton />}</>
 }
 
 export default MenuButton
