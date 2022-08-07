@@ -5,10 +5,12 @@ import { isMobile } from 'react-device-detect'
 const MenuButton = () => {
     const menuText = 'MENU'
     const [checkMobile, setCheckMobile] = useState()
+    const [renderButton, setRenderButton] = useState(false)
     const kbar = useKBar()
 
     useEffect(() => {
         setCheckMobile(isMobile)
+        setRenderButton(true)
     }, [])
 
     const toggleMenu = () => {
@@ -36,7 +38,11 @@ const MenuButton = () => {
         )
     }
 
-    return <>{checkMobile ? <MobileButton /> : <DesktopButton />}</>
+    return (
+        <>
+            {renderButton && checkMobile ? <MobileButton /> : <DesktopButton />}
+        </>
+    )
 }
 
 export default MenuButton
