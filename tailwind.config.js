@@ -19,6 +19,7 @@ module.exports = {
                 lg: ['1.125rem', '1.75'],
                 xl: ['1.25rem', '1.75'],
                 h1: ['2.25rem', '1.5'],
+                menu: ['6rem', '1'],
             },
             animation: {
                 enter: 'enter 0.6s forwards',

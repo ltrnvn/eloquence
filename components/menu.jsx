@@ -8,6 +8,7 @@ import {
     useMatches,
     KBarResults,
 } from 'kbar'
+import MenuButton from './menuButton'
 
 const Menu = (props) => {
     const actions = [
@@ -46,6 +47,7 @@ const Menu = (props) => {
                 ),
         },
     ]
+
     return (
         <KBarProvider actions={actions}>
             <KBarPortal>
@@ -56,6 +58,7 @@ const Menu = (props) => {
                     </KBarAnimator>
                 </KBarPositioner>
             </KBarPortal>
+            <MenuButton />
             {props.children}
         </KBarProvider>
     )

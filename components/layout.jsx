@@ -4,17 +4,17 @@ import Menu from '/components/menu'
 
 const Layout = (props) => {
     return (
-        <Menu>
-            <main className="max-w-3xl mx-auto py-28 px-4 sm:py-42">
+        <main className="max-w-3xl mx-auto px-4 py-28 sm:py-40">
+            <Menu>
                 {props.title && (
                     <h1 className="font-bold text-h1 text-black dark:text-white">
                         {props.title}
                     </h1>
                 )}
                 {props.children}
-            </main>
-            <Footer />
-        </Menu>
+                <Footer />
+            </Menu>
+        </main>
     )
 }
 
