@@ -17,7 +17,7 @@ const Toast = () => {
                 <div
                     appear
                     show={t.visible}
-                    className="flex p-4 bg-gray-400 rounded-lg shadow-lg opacity:0 text-slate-800 animate-enter dark:bg-slate-700 dark:text-white"
+                    className="flex p-4 bg-slate-200 rounded-lg shadow-lg opacity:0 text-slate-800 animate-enter dark:bg-slate-700 dark:text-white"
                 >
                     <ToastIcon toast={t} />
                     <p className="px-2">{resolveValue(t.message)}</p>

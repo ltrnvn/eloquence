@@ -86,12 +86,14 @@ function RenderResults() {
                 ) : (
                     <div
                         className={`flex items-center justify-between cursor-pointer px-4 py-2 ${
-                            active ? 'bg-slate-700' : 'bg-slate-900'
+                            active
+                                ? 'bg-slate-100 dark:bg-slate-700'
+                                : 'bg-white dark:bg-slate-900'
                         }`}
                     >
                         {item.name}
                         {item.shortcut && (
-                            <div className="flex h-6 w-6 items-center justify-center rounded-md text-xs transition-colors bg-slate-900 border border-slate-700">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-md text-xs transition-colors border bg-slate-100 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
                                 {item.shortcut}
                             </div>
                         )}
