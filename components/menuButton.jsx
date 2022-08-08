@@ -13,7 +13,7 @@ const MenuButton = () => {
 
     return (
         <div
-            className={`${desktopClasses} ${mobileClasses} text-center transition-all mx-auto cursor-pointer animate-enter opacity-0`}
+            className={`${desktopClasses} ${mobileClasses} w-100 text-center transition-all mx-auto cursor-pointer animate-enter opacity-0`}
             onClick={toggleMenu}
         >
             {menuText}
