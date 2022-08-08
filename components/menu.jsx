@@ -29,6 +29,14 @@ const Menu = (props) => {
             perform: () => (window.location.pathname = 'games'),
         },
         {
+            id: 'resume',
+            name: 'Resume',
+            shortcut: ['r'],
+            keywords: 'resume',
+            section: 'Pages',
+            perform: () => (window.location.pathname = 'resume'),
+        },
+        {
             id: 'theme',
             name: 'Change theme...',
             shortcut: ['t'],

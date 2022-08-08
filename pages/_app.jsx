@@ -4,11 +4,11 @@ import '/styles/globals.css'
 import '@fontsource/heebo/400.css'
 import '@fontsource/heebo/700.css'
 import '@fontsource/newsreader/400-italic.css'
-import ExternalLink from '../components/externalLink'
-import H1Title from '../components/h1Title'
-import H2Title from '../components/h2Title'
-import H3Title from '../components/h3Title'
-import Paragraph from '../components/paragraph'
+import ExternalLink from '../components/base/externalLink'
+import H1Title from '../components/base/h1Title'
+import H2Title from '../components/base/h2Title'
+import H3Title from '../components/base/h3Title'
+import Paragraph from '../components/base/paragraph'
 
 const _app = ({ Component, pageProps }) => {
     let itemCount = 0
