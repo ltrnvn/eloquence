@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     KBarProvider,
     KBarPortal,
@@ -9,8 +9,24 @@ import {
     KBarResults,
 } from 'kbar'
 import MenuButton from './menuButton'
+import { useLocalStorageValue } from '@react-hookz/web'
 
 const Menu = (props) => {
+    const [theme, setTheme, removeTheme] = useLocalStorageValue(
+        'theme',
+        undefined
+    )
+    useEffect(() => {
+        if (
+            theme === 'dark' ||
+            (!theme &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    }, [theme])
     const actions = [
         {
             id: 'home',
@@ -42,6 +58,30 @@ const Menu = (props) => {
             shortcut: ['t'],
             keywords: 'theme',
             section: 'Utilities',
+        },
+        {
+            id: 'lightMode',
+            name: 'Light',
+            shortcut: ['l'],
+            keywords: 'light',
+            parent: 'theme',
+            perform: () => setTheme('light'),
+        },
+        {
+            id: 'darkMode',
+            name: 'Dark',
+            shortcut: ['d'],
+            keywords: 'dark',
+            parent: 'theme',
+            perform: () => setTheme('dark'),
+        },
+        {
+            id: 'systemTheme',
+            name: 'System Default',
+            shortcut: ['s'],
+            keywords: 'light',
+            parent: 'theme',
+            perform: () => removeTheme(),
         },
         {
             id: 'code',
