@@ -8,6 +8,7 @@ import {
     useMatches,
     KBarResults,
 } from 'kbar'
+import { useRouter } from 'next/router'
 import MenuButton from './menuButton'
 import { useLocalStorageValue } from '@react-hookz/web'
 
@@ -16,6 +17,8 @@ const Menu = (props) => {
         'theme',
         undefined
     )
+    const { push } = useRouter()
+
     useEffect(() => {
         if (
             theme === 'dark' ||
@@ -34,7 +37,7 @@ const Menu = (props) => {
             shortcut: ['h'],
             keywords: 'home',
             section: 'Pages',
-            perform: () => (window.location.pathname = '/'),
+            perform: async () => push('/'),
         },
         {
             id: 'games',
@@ -42,7 +45,7 @@ const Menu = (props) => {
             shortcut: ['g'],
             keywords: 'games',
             section: 'Pages',
-            perform: () => (window.location.pathname = 'games'),
+            perform: async () => push('/games'),
         },
         {
             id: 'resume',
@@ -50,7 +53,7 @@ const Menu = (props) => {
             shortcut: ['r'],
             keywords: 'resume',
             section: 'Pages',
-            perform: () => (window.location.pathname = 'resume'),
+            perform: async () => push('/resume'),
         },
         {
             id: 'theme',
