@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster, ToastIcon, resolveValue } from 'react-hot-toast'
 
-toast('This site is still under development.')
-
 const Toast = () => {
-    const [showToast, setShowToast] = useState()
+    const [showToast, setShowToast] = useState(false)
+
     useEffect(() => {
-        if (showToast === undefined) {
+        console.log(showToast)
+        if (!showToast) {
+            toast('This site is still under development.')
             setShowToast(true)
+        }
+        return () => {
+            toast.dismiss()
         }
     }, [showToast])
 

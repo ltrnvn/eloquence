@@ -30,6 +30,7 @@ const Menu = (props) => {
             document.documentElement.classList.remove('dark')
         }
     }, [theme])
+
     const actions = [
         {
             id: 'home',
