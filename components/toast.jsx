@@ -5,15 +5,14 @@ const Toast = () => {
     const [showToast, setShowToast] = useState(false)
 
     useEffect(() => {
-        console.log(showToast)
         if (!showToast) {
             toast('This site is still under development.')
             setShowToast(true)
         }
         return () => {
-            toast.dismiss()
+            toast.remove()
         }
-    }, [showToast])
+    }, [])
 
     return (
         <>

@@ -9,6 +9,7 @@ import H1Title from '../components/base/h1Title'
 import H2Title from '../components/base/h2Title'
 import H3Title from '../components/base/h3Title'
 import Paragraph from '../components/base/paragraph'
+import Toast from '../components/toast'
 
 const _app = ({ Component, pageProps }) => {
     let itemCount = 0
@@ -43,6 +44,7 @@ const _app = ({ Component, pageProps }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
+            <Toast />
         </MDXProvider>
     )
 }

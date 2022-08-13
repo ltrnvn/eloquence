@@ -1,7 +1,6 @@
 import React from 'react'
 import Footer from './footer'
 import Menu from '/components/menu/menu'
-import Toast from './toast'
 
 const Layout = (props) => {
     return (
@@ -17,7 +16,6 @@ const Layout = (props) => {
                 </Menu>
             </main>
             <Footer />
-            <Toast />
         </>
     )
 }
