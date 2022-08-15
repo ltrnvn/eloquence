@@ -57,6 +57,14 @@ const Menu = (props) => {
             perform: async () => push('/resume'),
         },
         {
+            id: 'playlists',
+            name: 'Playlists',
+            shortcut: ['p'],
+            keywords: 'playlists',
+            section: 'Pages',
+            perform: async () => push('/playlists'),
+        },
+        {
             id: 'theme',
             name: 'Change theme...',
             shortcut: ['t'],
