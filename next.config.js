@@ -6,7 +6,12 @@ const withMDX = require('@next/mdx')({
         providerImportSource: '@mdx-js/react',
     },
 })
+
 module.exports = withMDX({
     // Append the default value with md extensions
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    images: {
+        formats: ['image/avif', 'image/webp'],
+        domains: ['i.scdn.co'],
+    },
 })

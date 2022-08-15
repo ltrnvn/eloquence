@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getPlaylists } from '/utils/spotify'
+import Image from 'next/image'
 
 const Playlists = () => {
     const [playlists, setPlaylists] = useState([])
@@ -23,15 +24,13 @@ const Playlists = () => {
                             href={playlist.url}
                             target="_blank"
                         >
-                            <div
-                                style={{
-                                    backgroundImage: `url(${playlist.image})`,
-                                    backgroundSize: 'cover',
-                                }}
+                            <Image
+                                src={playlist.image}
                                 alt="playlist image"
-                                className="mr-4 h-12 w-12"
+                                width={50}
+                                height={50}
                             />
-                            <div className="flex flex-col">
+                            <div className="flex flex-col ml-4">
                                 <p className="leading-6">{playlist.name}</p>
                                 <p className="text-gray-500 text-sm">
                                     {playlist.description}
