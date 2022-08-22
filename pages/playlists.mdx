@@ -1,11 +1,22 @@
 import Layout from '/components/layout'
 import ExternalLink from '/components/base/externalLink'
 import Playlists from '/components/playlists'
+import { getPlaylists } from '/utils/spotify'
 
 # Playlists
 
 ## Music takes an important part of my life. Hence, I've made some *Spotify* playlists to match any mood.
 
-<Playlists/>
+<Playlists playlists={props.playlists}/>
+
+export const getStaticProps =  async () => {
+  const playlists = await getPlaylists();
+
+  return {
+    props: {
+      playlists,
+    },
+  };
+};
 
 export default ({ children }) => <Layout>{children}</Layout>
