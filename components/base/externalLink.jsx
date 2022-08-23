@@ -7,6 +7,7 @@ const ExternalLink = (props) => {
         <span className="inline-block">
             <a
                 href={props.link}
+                rel="noreferrer"
                 target="_blank"
                 className="group flex items-center overflow-hidden underline decoration-gray-400 transition-decoration duration-300 hover:decoration-white"
             >

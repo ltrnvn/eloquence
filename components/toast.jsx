@@ -12,7 +12,7 @@ const Toast = () => {
         return () => {
             toast.remove()
         }
-    }, [])
+    }, [showToast])
 
     return (
         <>

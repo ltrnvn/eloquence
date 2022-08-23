@@ -15,6 +15,7 @@ const RenderPlaylists = ({ playlists }) => {
                     className="flex items-center py-2 transition-opacity group-hover:opacity-30 group-hover:hover:opacity-100"
                     href={url}
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <Image
                         src={image}
