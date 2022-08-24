@@ -6,7 +6,7 @@ const H3Title = (props) => {
 
     return (
         <h3
-            className="text-lg mt-12 mb-6 animate-enter opacity-0 text-gray-400"
+            className="mt-12 mb-6 animate-enter opacity-0 text-gray-400"
             style={animationDelay}
         >
             {props.children}
