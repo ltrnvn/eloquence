@@ -1,9 +1,9 @@
-import React from 'react'
-import { MAX_DELAY } from '../hooks/useAnimationDelay'
-import BulletList from '/components/base/bulletList'
-import resumeExperiences from '/data/resume'
+import React from 'react';
+import { MAX_DELAY } from '../hooks/useAnimationDelay';
+import BulletList from '/components/base/bulletList';
+import resumeExperiences from '/data/resume';
 
-const ResumeExperiences = (props) => {
+const ResumeExperiences = () => {
     return (
         <>
             {resumeExperiences &&
@@ -20,10 +20,10 @@ const ResumeExperiences = (props) => {
                             <p className="mb-4 text-gray-400">{`${experience.date}, ${experience.contract}`}</p>
                             <BulletList items={experience.description} />
                         </div>
-                    )
+                    );
                 })}
         </>
-    )
-}
+    );
+};
 
-export default ResumeExperiences
+export default ResumeExperiences;
