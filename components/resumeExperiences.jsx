@@ -1,4 +1,5 @@
 import React from 'react'
+import { MAX_DELAY } from '../hooks/useAnimationDelay'
 import BulletList from '/components/base/bulletList'
 import resumeExperiences from '/data/resume'
 
@@ -12,7 +13,7 @@ const ResumeExperiences = (props) => {
                             key={i}
                             className="mb-12 opacity-0 animate-enter"
                             style={{
-                                animationDelay: 600 + 'ms',
+                                animationDelay: MAX_DELAY + 'ms',
                             }}
                         >
                             <p className="font-medium text-xl">{`${experience.title}, ${experience.company}`}</p>
