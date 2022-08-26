@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import toast, { Toaster, ToastIcon, resolveValue } from 'react-hot-toast'
+import React, { useEffect, useState } from 'react';
+import toast, { Toaster, ToastIcon, resolveValue } from 'react-hot-toast';
 
 const Toast = () => {
-    const [showToast, setShowToast] = useState(false)
+    const [showToast, setShowToast] = useState(false);
 
     useEffect(() => {
         if (!showToast) {
-            toast('This site is still under development.')
-            setShowToast(true)
+            toast('This site is still under development.');
+            setShowToast(true);
         }
         return () => {
-            toast.remove()
-        }
-    }, [showToast])
+            toast.remove();
+        };
+    }, [showToast]);
 
     return (
         <>
-            {showToast ? (
+            {showToast && (
                 <Toaster
                     containerClassName="!inset-y-8"
                     toastOptions={{
@@ -32,9 +32,9 @@ const Toast = () => {
                         </span>
                     )}
                 </Toaster>
-            ) : null}
+            )}
         </>
-    )
-}
+    );
+};
 
-export default Toast
+export default Toast;

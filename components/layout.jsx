@@ -4,21 +4,23 @@ import Menu from '/components/menu/menu';
 import { NextSeo } from 'next-seo';
 
 const Layout = (props) => {
+    const { children, title, SEOTitle } = props;
+
     return (
         <>
             <NextSeo
-                title={props.title}
+                title={SEOTitle}
                 titleTemplate="%s — Léon Tran-Van"
                 description="I'm a front-end developer with a designer soul curbed by color blindness."
             />
             <main className="max-w-3xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
                 <Menu>
-                    {props.title && (
+                    {title && (
                         <h1 className="font-bold text-h1 text-black dark:text-white">
-                            {props.title}
+                            {title}
                         </h1>
                     )}
-                    {props.children}
+                    {children}
                 </Menu>
             </main>
             <Footer />
