@@ -1,4 +1,4 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
 class Document extends NextDocument {
     render() {
@@ -12,7 +12,7 @@ class Document extends NextDocument {
                     <link
                         rel="preconnect"
                         href="https://fonts.gstatic.com"
-                        crossorigin
+                        crossOrigin
                     />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,300;1,400&display=swap&family=Poppins:wght@400;700&display=swap&family=Heebo:wght@400;700"
@@ -24,8 +24,8 @@ class Document extends NextDocument {
                     <NextScript />
                 </body>
             </Html>
-        )
+        );
     }
 }
 
-export default Document
+export default Document;
