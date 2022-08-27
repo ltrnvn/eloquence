@@ -5,12 +5,12 @@ import '@fontsource/heebo/400.css';
 import '@fontsource/heebo/500.css';
 import '@fontsource/heebo/700.css';
 import '@fontsource/newsreader/400-italic.css';
-import ExternalLink from '../components/base/externalLink';
-import H1Title from '../components/base/h1Title';
-import H2Title from '../components/base/h2Title';
-import H3Title from '../components/base/h3Title';
-import Paragraph from '../components/base/paragraph';
-import Toast from '../components/toast';
+import ExternalLink from '@/components/base/externalLink';
+import H1Title from '@/components/base/h1Title';
+import H2Title from '@/components/base/h2Title';
+import H3Title from '@/components/base/h3Title';
+import Paragraph from '@/components/base/paragraph';
+import Toast from '@/components/toast';
 import { DefaultSeo } from 'next-seo';
 
 const _app = ({ Component, pageProps }) => {

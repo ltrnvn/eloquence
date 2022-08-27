@@ -11,7 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import MenuButton from './menuButton';
 import { useLocalStorageValue } from '@react-hookz/web';
-import { social } from '../../utils/social';
+import { social } from '@/utils/social';
 import Image from 'next/image';
 
 const Menu = (props) => {

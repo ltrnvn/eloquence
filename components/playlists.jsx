@@ -1,10 +1,10 @@
-import React from 'react'
-import Image from 'next/image'
-import { BASE_DELAY } from '../hooks/useAnimationDelay'
+import React from 'react';
+import Image from 'next/image';
+import { BASE_DELAY } from '@/hooks/useAnimationDelay';
 
 const RenderPlaylists = ({ playlists }) => {
     return playlists.map((playlist, i) => {
-        const { url, image, name, description } = playlist
+        const { url, image, name, description } = playlist;
         return (
             <li
                 key={i}
@@ -29,16 +29,16 @@ const RenderPlaylists = ({ playlists }) => {
                     </div>
                 </a>
             </li>
-        )
-    })
-}
+        );
+    });
+};
 
 const Playlists = ({ playlists }) => {
     return (
         <ul className="mt-12 group">
             <RenderPlaylists playlists={playlists} />
         </ul>
-    )
-}
+    );
+};
 
-export default Playlists
+export default Playlists;

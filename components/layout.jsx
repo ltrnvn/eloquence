@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './footer';
-import Menu from '/components/menu/menu';
+import Menu from '@/components/menu/menu';
 import { NextSeo } from 'next-seo';
 
 const Layout = (props) => {

@@ -1,8 +1,8 @@
-import React from 'react'
-import useAnimationDelay from '/hooks/useAnimationDelay'
+import React from 'react';
+import useAnimationDelay from '@/hooks/useAnimationDelay';
 
 const H2Title = (props) => {
-    const animationDelay = useAnimationDelay(props.itemCount)
+    const animationDelay = useAnimationDelay(props.itemCount);
 
     return (
         <h2
@@ -11,7 +11,7 @@ const H2Title = (props) => {
         >
             {props.children}
         </h2>
-    )
-}
+    );
+};
 
-export default H2Title
+export default H2Title;

@@ -1,8 +1,8 @@
-import React from 'react'
-import useAnimationDelay from '/hooks/useAnimationDelay'
+import React from 'react';
+import useAnimationDelay from '@/hooks/useAnimationDelay';
 
 const H3Title = (props) => {
-    const animationDelay = useAnimationDelay(props.itemCount)
+    const animationDelay = useAnimationDelay(props.itemCount);
 
     return (
         <h3
@@ -11,7 +11,7 @@ const H3Title = (props) => {
         >
             {props.children}
         </h3>
-    )
-}
+    );
+};
 
-export default H3Title
+export default H3Title;

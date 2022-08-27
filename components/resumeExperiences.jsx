@@ -1,7 +1,7 @@
 import React from 'react';
-import { MAX_DELAY } from '../hooks/useAnimationDelay';
-import BulletList from '/components/base/bulletList';
-import experiences from '/data/resume';
+import { MAX_DELAY } from '@/hooks/useAnimationDelay';
+import BulletList from '@/components/base/bulletList';
+import experiences from '@/utils/resume';
 
 const ExperienceItem = (props) => {
     const { title, date, company, contract, description } = props.experience;
