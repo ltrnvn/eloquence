@@ -3,20 +3,22 @@ import Footer from './footer';
 import Menu from '@/components/menu/menu';
 import { NextSeo } from 'next-seo';
 
-const Layout = (props) => {
-    const { children, title, SEOTitle } = props;
-
+const Layout = ({ children, title, SEOTitle }) => {
+    const DEFAULT_TITLE =
+        'Léon Tran-Van — Frontend engineer with a designer soul curbed by color blindness';
+    const DESCRIPTION =
+        'Building curated projects and beautiful interfaces with the benefits of cutting-edge technology.';
     return (
         <>
             <NextSeo
                 title={SEOTitle}
                 titleTemplate="%s — Léon Tran-Van"
-                description="I'm a frontend engineer with a designer soul curbed by color blindness."
+                defaultTitle={DEFAULT_TITLE}
+                description={DESCRIPTION}
                 openGraph={{
                     url: 'https://www.tranvanleon.com/',
-                    title: `${SEOTitle} — Léon Tran-Van`,
-                    description:
-                        "I'm a frontend engineer with a designer soul curbed by color blindness.",
+                    title: DEFAULT_TITLE,
+                    description: DESCRIPTION,
                     images: [
                         {
                             url: 'https://www.tranvanleon.com/cover.png',
