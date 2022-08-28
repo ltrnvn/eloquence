@@ -36,7 +36,7 @@ const Layout = ({ children, title, SEOTitle }) => {
                     },
                 }}
             />
-            <main className="max-w-3xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
+            <main className="max-w-2xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
                 <Menu>
                     {title && (
                         <h1 className="font-bold text-h1 text-black dark:text-white">
