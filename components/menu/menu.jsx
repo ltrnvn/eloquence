@@ -14,7 +14,7 @@ import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
 import Image from 'next/image';
 
-const Menu = (props) => {
+const Menu = ({ children }) => {
     const [theme, setTheme, removeTheme] = useLocalStorageValue(
         'theme',
         undefined
@@ -138,7 +138,7 @@ const Menu = (props) => {
                 </KBarPositioner>
             </KBarPortal>
             <MenuButton />
-            {props.children}
+            {children}
         </KBarProvider>
     );
 };

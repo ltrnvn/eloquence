@@ -1,17 +1,17 @@
 import React from 'react';
 import { ArrowUpRight } from 'react-feather';
 
-const ExternalLink = (props) => {
-    const iconSize = props.size ? props.size : 16;
+const ExternalLink = ({ size, link, text }) => {
+    const iconSize = size ? size : 16;
     return (
         <span className="inline-block">
             <a
-                href={props.link}
+                href={link}
                 rel="noreferrer"
                 target="_blank"
                 className="group flex items-center overflow-hidden underline underline-offset-2 decoration-slate-600 transition-decoration duration-300 hover:decoration-slate-400 dark:hover:decoration-white"
             >
-                {props.text}
+                {text}
                 <ArrowUpRight
                     width={iconSize}
                     height={iconSize}

@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const BulletList = (props) => {
-    const { items } = props
+const BulletList = ({ items }) => {
     return (
         <>
             {items &&
@@ -13,10 +12,10 @@ const BulletList = (props) => {
                         >
                             <li className="pl-2">{item}</li>
                         </ul>
-                    )
+                    );
                 })}
         </>
-    )
-}
+    );
+};
 
-export default BulletList
+export default BulletList;

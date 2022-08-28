@@ -3,8 +3,9 @@ import { MAX_DELAY } from '@/hooks/useAnimationDelay';
 import BulletList from '@/components/base/bulletList';
 import experiences from '@/utils/resume';
 
-const ExperienceItem = (props) => {
-    const { title, date, company, contract, description } = props.experience;
+const ExperienceItem = ({
+    experience: { title, date, company, contract, description },
+}) => {
     return (
         <div
             className="mb-12 opacity-0 animate-enter"
