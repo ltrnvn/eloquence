@@ -26,7 +26,7 @@ const Toast = () => {
                     }}
                 >
                     {(t) => (
-                        <span className="flex p-4 bg-slate-200 rounded-lg shadow-lg opacity:0 text-slate-800 animate-enter dark:bg-slate-700 dark:text-white">
+                        <span className="flex p-4 text-white bg-slate-700 rounded-lg shadow-lg opacity:0 animate-enter dark:bg-slate-700 dark:text-white">
                             <ToastIcon toast={t} />
                             <p className="px-2">{resolveValue(t.message)}</p>
                         </span>

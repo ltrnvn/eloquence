@@ -13,7 +13,7 @@ const ExperienceItem = (props) => {
             }}
         >
             <p className="font-medium text-xl">{`${title}, ${company}`}</p>
-            <p className="mb-4 text-gray-400">{`${date}, ${contract}`}</p>
+            <p className="mb-4 text-slate-400">{`${date}, ${contract}`}</p>
             <BulletList items={description} />
         </div>
     );

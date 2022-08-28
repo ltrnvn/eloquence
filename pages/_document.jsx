@@ -12,14 +12,14 @@ class Document extends NextDocument {
                     <link
                         rel="preconnect"
                         href="https://fonts.gstatic.com"
-                        crossOrigin
+                        crossOrigin="true"
                     />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,300;1,400&display=swap&family=Poppins:wght@400;700&display=swap&family=Heebo:wght@400;700"
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="text-md overflow-x-hidden bg-white text-black antialiased dark:bg-slate-900 dark:text-white">
+                <body className="text-md overflow-x-hidden bg-beige text-slate-800 antialiased dark:bg-slate-900 dark:text-white">
                     <Main />
                     <NextScript />
                 </body>

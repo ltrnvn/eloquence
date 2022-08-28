@@ -8,7 +8,7 @@ const RenderPlaylists = ({ playlists }) => {
         return (
             <li
                 key={i}
-                className="border-b-[1px] border-gray-700 last:border-0 opacity-0 animate-enter "
+                className="border-b-[1px] border-slate-700 last:border-0 opacity-0 animate-enter "
                 style={{ animationDelay: (i + 2) * BASE_DELAY + 'ms' }}
             >
                 <a
@@ -25,7 +25,7 @@ const RenderPlaylists = ({ playlists }) => {
                     />
                     <div className="flex flex-col ml-4">
                         <p className="leading-6">{name}</p>
-                        <p className="text-gray-500 text-sm">{description}</p>
+                        <p className="text-slate-500 text-sm">{description}</p>
                     </div>
                 </a>
             </li>

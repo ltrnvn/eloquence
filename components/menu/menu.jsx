@@ -130,9 +130,9 @@ const Menu = (props) => {
     return (
         <KBarProvider actions={[...actions, ...socialActions]}>
             <KBarPortal>
-                <KBarPositioner className="z-30 bg-gray-50/80 backdrop-blur-sm dark:bg-slate-800/80">
-                    <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-lg bg-white drop-shadow-2xl dark:bg-gray-900">
-                        <KBarSearch className="font-md w-full border-b border-gray-100 bg-transparent py-3 px-4 font-normal text-gray-900 outline-none dark:border-gray-800 dark:text-white" />
+                <KBarPositioner className="z-30 bg-slate-50/80 backdrop-blur-sm dark:bg-slate-800/80">
+                    <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-lg bg-beige drop-shadow-2xl dark:bg-slate-900">
+                        <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal text-slate-900 outline-none dark:border-slate-800 dark:text-white" />
                         <RenderResults />
                     </KBarAnimator>
                 </KBarPositioner>
@@ -151,7 +151,7 @@ function RenderResults() {
             items={results}
             onRender={({ item, active }) => {
                 return typeof item === 'string' ? (
-                    <div className="text-sm px-4 py-2 text-gray-400">
+                    <div className="text-sm px-4 py-2 text-slate-400">
                         {item}
                     </div>
                 ) : (
@@ -159,7 +159,7 @@ function RenderResults() {
                         className={`flex items-center cursor-pointer px-4 py-2 ${
                             active
                                 ? 'bg-slate-100 dark:bg-slate-700'
-                                : 'bg-white dark:bg-slate-900'
+                                : 'bg-beige dark:bg-slate-900'
                         }`}
                     >
                         {item.icon && (
@@ -167,7 +167,7 @@ function RenderResults() {
                         )}
                         {item.name}
                         {item.shortcut && (
-                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border bg-slate-100 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
+                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border bg-slate-200 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
                                 {item.shortcut}
                             </div>
                         )}

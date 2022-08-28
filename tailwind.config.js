@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     darkMode: 'class',
@@ -9,6 +9,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            colors: {
+                beige: '#fdfdf3',
+            },
             fontFamily: {
                 sans: ['Heebo', ...defaultTheme.fontFamily.sans],
                 serif: ['Newsreader', ...defaultTheme.fontFamily.serif],
@@ -40,4 +43,4 @@ module.exports = {
         },
     },
     plugins: [require('tailwindcss-animation-delay')],
-}
+};
