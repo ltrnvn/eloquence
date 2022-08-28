@@ -5,7 +5,7 @@ const withMDX = require('@next/mdx')({
         rehypePlugins: [],
         providerImportSource: '@mdx-js/react',
     },
-})
+});
 
 module.exports = withMDX({
     // Append the default value with md extensions
@@ -14,4 +14,11 @@ module.exports = withMDX({
         formats: ['image/avif', 'image/webp'],
         domains: ['i.scdn.co'],
     },
-})
+    webpack: (config, { isServer }) => {
+        if (isServer) {
+            require('./utils/sitemap');
+        }
+
+        return config;
+    },
+});
