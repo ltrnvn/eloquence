@@ -71,17 +71,20 @@ const RenderDescription = ({ description }) => {
 };
 
 const RenderItems = ({ items }) => {
-    return items.map((item, i) => {
-        return (
-            <li
-                key={i}
-                className="border-b-[1px] border-slate-700 last:border-0 opacity-0 animate-enter "
-                style={{ animationDelay: (i + 2) * BASE_DELAY + 'ms' }}
-            >
-                <RenderItem item={item} />
-            </li>
-        );
-    });
+    return (
+        <ul className="mt-12 group">
+            {items &&
+                items.map((item, i) => (
+                    <li
+                        key={i}
+                        className="border-b-[1px] border-slate-700 last:border-0 opacity-0 animate-enter "
+                        style={{ animationDelay: (i + 2) * BASE_DELAY + 'ms' }}
+                    >
+                        <RenderItem item={item} />
+                    </li>
+                ))}
+        </ul>
+    );
 };
 
 const RichList = ({ items }) => {

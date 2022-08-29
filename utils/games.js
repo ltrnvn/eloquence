@@ -16,12 +16,20 @@ export const games = [
         platform: 'playstation',
     },
     {
+        name: 'Dying Light Series',
+        platform: 'playstation',
+    },
+    {
         name: 'Clash Royale',
         platform: 'phone',
     },
     {
         name: 'Clash of Clans',
         platform: 'phone',
+    },
+    {
+        name: 'Uncharted Series',
+        platform: 'playstation',
     },
     {
         name: 'Midnight Club: Los Angeles',
@@ -33,14 +41,6 @@ export const games = [
     },
     {
         name: 'Saints Row Series',
-        platform: 'playstation',
-    },
-    {
-        name: 'Uncharted Series',
-        platform: 'playstation',
-    },
-    {
-        name: 'Dying Light Series',
         platform: 'playstation',
     },
     {
