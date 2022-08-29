@@ -1,6 +1,7 @@
 import Layout from '@/components/layout'
 import ExternalLink from '@/components/base/externalLink'
-import Gameslist from '@/components/gameslist'
+import RichList from '@/components/richList'
+import { games } from '@/utils/games';
 
 # Games
 
@@ -33,6 +34,6 @@ I'm also streaming on <ExternalLink link="https://www.twitch.tv/ephalys" text="T
 
 Here's the list of games that kept me awake during tons of nights:
 
-<Gameslist />
+<RichList items={games} />
 
 export default ({ children }) => <Layout SEOTitle="Games">{children}</Layout>
