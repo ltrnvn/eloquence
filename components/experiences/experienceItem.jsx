@@ -1,7 +1,6 @@
 import React from 'react';
 import { MAX_DELAY } from '@/hooks/useAnimationDelay';
 import BulletList from '@/components/base/bulletList';
-import experiences from '@/utils/resume';
 
 const ExperienceItem = ({
     experience: { title, date, company, contract, description },
@@ -20,15 +19,4 @@ const ExperienceItem = ({
     );
 };
 
-const ResumeExperiences = () => {
-    return (
-        <>
-            {experiences &&
-                experiences.map((experience, i) => (
-                    <ExperienceItem experience={experience} key={i} />
-                ))}
-        </>
-    );
-};
-
-export default ResumeExperiences;
+export default ExperienceItem;
