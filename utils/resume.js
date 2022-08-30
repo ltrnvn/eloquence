@@ -7,10 +7,13 @@ const resumeExperiences = [
         description: [
             `Develop and maintain interfaces (Magento 2 and Sitecore)`,
             `Create authentication/SSO widget (Vue.js and Pinia)`,
+            `Frequent exchanges with designers and developers to take wireframes from conception to implementation and improve user interfaces`,
+            `Contribute to resolve interface issues and technical choices tailored to the project`,
+            `Awareness of cross-browser compatibility issues and client-side performance considerations`,
+            `Advanced knowledge of web technologies and UI/UX standards`,
             `Optimization and performances (tree-shaking, packages, build reports)`,
             `Code refactoring, pair programming, technology watch`,
-            `Research and choose libraries tailored to the project`,
-            `Agile/Scrum`,
+            `Agile Scrum organization`,
         ],
     },
     {
@@ -36,6 +39,6 @@ const resumeExperiences = [
             `Making a website - from scratch - for Classicat's including an admin interface`,
         ],
     },
-]
+];
 
-export default resumeExperiences
+export default resumeExperiences;
