@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     KBarProvider,
     KBarPortal,
@@ -10,9 +10,9 @@ import {
 } from 'kbar';
 import { useRouter } from 'next/router';
 import MenuButton from './menuButton';
+import MenuIcon from './menuIcon';
 import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
-import Image from 'next/image';
 
 const Menu = ({ children }) => {
     const [theme, setTheme, removeTheme] = useLocalStorageValue(
@@ -37,15 +37,8 @@ const Menu = ({ children }) => {
         id,
         name,
         keywords: id,
-        icon: (
-            <Image
-                src={`/social/${id}.svg`}
-                width={16}
-                height={16}
-                quality={100}
-                alt=""
-            />
-        ),
+        iconSource: `/social/${id}.svg`,
+        iconDescription: `${id} icon`,
         section: 'Social',
         perform: () => window.open(url, '_blank'),
     }));
@@ -145,25 +138,31 @@ const Menu = ({ children }) => {
 
 function RenderResults() {
     const { results } = useMatches();
+    const lazyRootRef = useRef(null);
 
     return (
         <KBarResults
             items={results}
             onRender={({ item, active }) => {
                 return typeof item === 'string' ? (
-                    <div className="text-sm px-4 py-2 text-slate-400">
-                        {item}
-                    </div>
+                    <div className="text-sm px-4 py-2 text-blue">{item}</div>
                 ) : (
                     <div
+                        ref={lazyRootRef}
                         className={`flex items-center cursor-pointer px-4 py-2 ${
                             active
                                 ? 'bg-slate-100 dark:bg-slate-700'
                                 : 'bg-beige dark:bg-slate-900'
                         }`}
                     >
-                        {item.icon && (
-                            <div className="mr-3 flex">{item.icon}</div>
+                        {item.iconSource && (
+                            <div className="mr-3 flex">
+                                <MenuIcon
+                                    source={item.iconSource}
+                                    description={item.description}
+                                    ref={lazyRootRef}
+                                />
+                            </div>
                         )}
                         {item.name}
                         {item.shortcut && (
