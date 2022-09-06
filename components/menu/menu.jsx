@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     KBarProvider,
     KBarPortal,
@@ -10,9 +10,9 @@ import {
 } from 'kbar';
 import { useRouter } from 'next/router';
 import MenuButton from './menuButton';
+import MenuIcon from './menuIcon';
 import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
-import Image from 'next/image';
 
 const Menu = ({ children }) => {
     const [theme, setTheme, removeTheme] = useLocalStorageValue(
@@ -37,19 +37,8 @@ const Menu = ({ children }) => {
         id,
         name,
         keywords: id,
-        icon: forwardRef(function renderIcon(props, ref) {
-            return (
-                <Image
-                    {...props}
-                    src={`/social/${id}.svg`}
-                    lazyRoot={ref}
-                    width={16}
-                    height={16}
-                    quality={100}
-                    alt={id}
-                />
-            );
-        }),
+        iconSource: `/social/${id}.svg`,
+        iconDescription: `${id} icon`,
         section: 'Social',
         perform: () => window.open(url, '_blank'),
     }));
@@ -156,9 +145,7 @@ function RenderResults() {
             items={results}
             onRender={({ item, active }) => {
                 return typeof item === 'string' ? (
-                    <div className="text-sm px-4 py-2 text-slate-400">
-                        {item}
-                    </div>
+                    <div className="text-sm px-4 py-2 text-blue">{item}</div>
                 ) : (
                     <div
                         ref={lazyRootRef}
@@ -168,9 +155,13 @@ function RenderResults() {
                                 : 'bg-beige dark:bg-slate-900'
                         }`}
                     >
-                        {item.icon && (
+                        {item.iconSource && (
                             <div className="mr-3 flex">
-                                <item.icon lazyRoot={lazyRootRef} />
+                                <MenuIcon
+                                    source={item.iconSource}
+                                    description={item.description}
+                                    ref={lazyRootRef}
+                                />
                             </div>
                         )}
                         {item.name}
