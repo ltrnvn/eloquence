@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import {
     KBarProvider,
     KBarPortal,
@@ -37,15 +37,19 @@ const Menu = ({ children }) => {
         id,
         name,
         keywords: id,
-        icon: (
-            <Image
-                src={`/social/${id}.svg`}
-                width={16}
-                height={16}
-                quality={100}
-                alt=""
-            />
-        ),
+        icon: forwardRef(function renderIcon(props, ref) {
+            return (
+                <Image
+                    {...props}
+                    src={`/social/${id}.svg`}
+                    lazyRoot={ref}
+                    width={16}
+                    height={16}
+                    quality={100}
+                    alt={id}
+                />
+            );
+        }),
         section: 'Social',
         perform: () => window.open(url, '_blank'),
     }));
@@ -145,6 +149,7 @@ const Menu = ({ children }) => {
 
 function RenderResults() {
     const { results } = useMatches();
+    const lazyRootRef = useRef(null);
 
     return (
         <KBarResults
@@ -156,6 +161,7 @@ function RenderResults() {
                     </div>
                 ) : (
                     <div
+                        ref={lazyRootRef}
                         className={`flex items-center cursor-pointer px-4 py-2 ${
                             active
                                 ? 'bg-slate-100 dark:bg-slate-700'
@@ -163,7 +169,9 @@ function RenderResults() {
                         }`}
                     >
                         {item.icon && (
-                            <div className="mr-3 flex">{item.icon}</div>
+                            <div className="mr-3 flex">
+                                <item.icon lazyRoot={lazyRootRef} />
+                            </div>
                         )}
                         {item.name}
                         {item.shortcut && (
