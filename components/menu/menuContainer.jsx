@@ -7,8 +7,8 @@ import {
     KBarSearch,
 } from 'kbar';
 import { useRouter } from 'next/router';
-import MenuButton from './menuButton';
-import MenuIcon from './menuIcon';
+import MenuButton from '@/components/menu/menuButton';
+import MenuContent from '@/components/menu/menuContent';
 import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
 
@@ -136,46 +136,5 @@ const Menu = ({ children }) => {
         </KBarProvider>
     );
 };
-
-function RenderResults() {
-    const { results } = useMatches();
-    const lazyRootRef = useRef(null);
-
-    return (
-        <KBarResults
-            items={results}
-            onRender={({ item, active }) => {
-                return typeof item === 'string' ? (
-                    <div className="text-sm px-4 py-2 text-blue">{item}</div>
-                ) : (
-                    <div
-                        ref={lazyRootRef}
-                        className={`flex items-center cursor-pointer px-4 py-2 ${
-                            active
-                                ? 'bg-slate-100 dark:bg-slate-700'
-                                : 'bg-beige dark:bg-slate-900'
-                        }`}
-                    >
-                        {item.iconSource && (
-                            <div className="mr-3 flex">
-                                <MenuIcon
-                                    source={item.iconSource}
-                                    description={item.description}
-                                    ref={lazyRootRef}
-                                />
-                            </div>
-                        )}
-                        {item.name}
-                        {item.shortcut && (
-                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border bg-slate-200 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
-                                {item.shortcut}
-                            </div>
-                        )}
-                    </div>
-                );
-            }}
-        />
-    );
-}
 
 export default Menu;
