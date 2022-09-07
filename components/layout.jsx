@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './footer';
-import Menu from '@/components/menu/menu';
+import MenuContainer from '@/components/menu/menuContainer';
 import { NextSeo } from 'next-seo';
 
 const Layout = ({ children, SEOTitle }) => {
@@ -37,7 +37,7 @@ const Layout = ({ children, SEOTitle }) => {
                 }}
             />
             <main className="max-w-2xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
-                <Menu />
+                <MenuContainer />
                 {children}
             </main>
             <Footer />

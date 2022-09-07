@@ -5,12 +5,10 @@ import {
     KBarPositioner,
     KBarAnimator,
     KBarSearch,
-    useMatches,
-    KBarResults,
 } from 'kbar';
 import { useRouter } from 'next/router';
-import MenuButton from './menuButton';
-import MenuIcon from './menuIcon';
+import MenuContent from '@/components/menu/menuContent';
+import MenuButton from '@/components/menu/menuButton';
 import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
 
@@ -20,6 +18,7 @@ const Menu = ({ children }) => {
         undefined
     );
     const { push } = useRouter();
+    const lazyRootRef = useRef(null);
 
     useEffect(() => {
         if (
@@ -125,8 +124,10 @@ const Menu = ({ children }) => {
             <KBarPortal>
                 <KBarPositioner className="z-30 bg-slate-50/80 backdrop-blur-sm dark:bg-slate-800/80">
                     <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-lg bg-beige drop-shadow-2xl dark:bg-slate-900">
-                        <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal text-slate-900 outline-none dark:border-slate-800 dark:text-white" />
-                        <RenderResults />
+                        <div ref={lazyRootRef}>
+                            <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal outline-none placeholder:text-slate-400 text-slate-900 dark:border-slate-800 dark:text-white" />
+                            <MenuContent ref={lazyRootRef} />
+                        </div>
                     </KBarAnimator>
                 </KBarPositioner>
             </KBarPortal>
@@ -135,46 +136,5 @@ const Menu = ({ children }) => {
         </KBarProvider>
     );
 };
-
-function RenderResults() {
-    const { results } = useMatches();
-    const lazyRootRef = useRef(null);
-
-    return (
-        <KBarResults
-            items={results}
-            onRender={({ item, active }) => {
-                return typeof item === 'string' ? (
-                    <div className="text-sm px-4 py-2 text-blue">{item}</div>
-                ) : (
-                    <div
-                        ref={lazyRootRef}
-                        className={`flex items-center cursor-pointer px-4 py-2 ${
-                            active
-                                ? 'bg-slate-100 dark:bg-slate-700'
-                                : 'bg-beige dark:bg-slate-900'
-                        }`}
-                    >
-                        {item.iconSource && (
-                            <div className="mr-3 flex">
-                                <MenuIcon
-                                    source={item.iconSource}
-                                    description={item.description}
-                                    ref={lazyRootRef}
-                                />
-                            </div>
-                        )}
-                        {item.name}
-                        {item.shortcut && (
-                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border bg-slate-200 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
-                                {item.shortcut}
-                            </div>
-                        )}
-                    </div>
-                );
-            }}
-        />
-    );
-}
 
 export default Menu;
