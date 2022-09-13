@@ -1,18 +1,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/games</loc>
+    <loc>undefined/games</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>http://localhost:3000</loc>
+    <loc>undefined</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>http://localhost:3000/playlists</loc>
+    <loc>undefined/playlists</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>http://localhost:3000/resume</loc>
+    <loc>undefined/resume</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>

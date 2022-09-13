@@ -27,6 +27,7 @@ module.exports = {
             },
             animation: {
                 enter: 'enter 0.6s forwards',
+                exit: 'exit 0.6s forwards',
             },
             keyframes: {
                 enter: {
@@ -37,6 +38,15 @@ module.exports = {
                     to: {
                         opacity: 1,
                         transform: 'none',
+                    },
+                },
+                exit: {
+                    '0%': {
+                        opacity: 1,
+                    },
+                    to: {
+                        opacity: 0,
+                        transform: 'translateY(0.5rem)',
                     },
                 },
             },
