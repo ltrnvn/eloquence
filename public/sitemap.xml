@@ -1,18 +1,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>undefined/games</loc>
+    <loc>https://tranvanleon.com//games</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>undefined</loc>
+    <loc>https://tranvanleon.com/</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>undefined/playlists</loc>
+    <loc>https://tranvanleon.com//playlists</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>undefined/resume</loc>
+    <loc>https://tranvanleon.com//resume</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>
