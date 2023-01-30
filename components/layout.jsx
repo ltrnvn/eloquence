@@ -39,8 +39,8 @@ const Layout = ({ children, SEOTitle }) => {
             <main className="max-w-2xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
                 <MenuContainer />
                 {children}
+                <Footer />
             </main>
-            <Footer />
         </>
     );
 };
