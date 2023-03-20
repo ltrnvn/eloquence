@@ -2,10 +2,10 @@ import React from 'react';
 import RichListImage from '@/components/richList/richListImage';
 import RichListDescription from '@/components/richList/richListDescription';
 import RichListName from '@/components/richList/richListName';
-import RichListPlatform from '@/components/richList/richListPlatform';
+import RichListIcon from '@/components/richList/richListIcon';
 
 const RichListItemContent = ({ item }) => {
-    const { image, name, platform, description } = item;
+    const { image, name, icon, description } = item;
 
     return (
         <>
@@ -16,7 +16,7 @@ const RichListItemContent = ({ item }) => {
                     <RichListDescription description={description} />
                 )}
             </div>
-            {platform && <RichListPlatform platform={platform} />}
+            {icon && <RichListIcon icon={icon} />}
         </>
     );
 };

@@ -1,0 +1,12 @@
+import Layout from '@/components/layout'
+import ExternalLink from '@/components/base/externalLink'
+import RichList from '@/components/richList/richList'
+import { projects } from '@/utils/projects';
+
+# Playground
+
+## This the place where I experiment *things*, consider it as a showcase of my mind.
+
+<RichList items={projects} />
+
+export default ({ children }) => <Layout SEOTitle="Playground">{children}</Layout>

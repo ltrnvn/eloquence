@@ -1,72 +1,72 @@
 export const games = [
     {
         name: 'Battlefield V',
-        platform: 'pc',
+        icon: 'pc',
     },
     {
         name: 'Aimlab',
-        platform: 'pc',
+        icon: 'pc',
     },
     {
         name: 'Call of Duty Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Need for Speed Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Dying Light Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Clash Royale',
-        platform: 'phone',
+        icon: 'phone',
     },
     {
         name: 'Clash of Clans',
-        platform: 'phone',
+        icon: 'phone',
     },
     {
         name: 'Uncharted Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Midnight Club: Los Angeles',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Little Big Planet Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Saints Row Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: "Assassin's Creed Series",
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'GTA Series',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'Dead Nation',
-        platform: 'playstation',
+        icon: 'playstation',
     },
     {
         name: 'SOCOM: Confrontation',
-        platform: 'playstation',
+        icon: 'playstation',
     },
 
     {
         name: 'Spartan Total Warrior',
-        platform: 'playstation',
+        icon: 'playstation',
     },
 
     {
         name: 'Pro Evolution Soccer',
-        platform: 'playstation',
+        icon: 'playstation',
     },
 ];

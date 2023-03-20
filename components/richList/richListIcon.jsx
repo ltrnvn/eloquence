@@ -1,17 +1,17 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const getPlatformComponent = (name) =>
+const getIconComponent = (name) =>
     dynamic(() => import(`@/components/svg/${name}`), {
         ssr: false,
     });
 
-const RichListPlatform = ({ platform }) => {
-    const PlatformComponent = getPlatformComponent(platform);
+const RichListIcon = ({ icon }) => {
+    const IconComponent = getIconComponent(icon);
 
     return (
         <div className="ml-auto">
-            <PlatformComponent
+            <IconComponent
                 className="fill-slate-800 dark:fill-white"
                 width={18}
                 height={18}
@@ -20,4 +20,4 @@ const RichListPlatform = ({ platform }) => {
     );
 };
 
-export default RichListPlatform;
+export default RichListIcon;
