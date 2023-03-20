@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import quotes from '@/utils/quotes';
+import React from 'react';
+import { useRandomQuote } from '@/hooks/useRandomQuote';
 
 const Footer = () => {
-    const [randomQuote, setrandomQuote] = useState();
-
-    useEffect(() => {
-        setrandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-    }, []);
+    const randomQuote = useRandomQuote();
 
     return (
         <footer className="py-4 mt-12 sm:mt-28 text-sm text-slate-400 border-t border-slate-200 dark:border-slate-600">
