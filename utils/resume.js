@@ -2,7 +2,7 @@ const resumeExperiences = [
     {
         title: 'Frontend engineer',
         company: 'Hager',
-        date: '2020 — 2022',
+        date: '2020 — 2023',
         contract: 'Apprenticeship & contract',
         description: [
             `Develop and maintain interfaces (Magento 2 and Sitecore)`,
