@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
     KBarProvider,
     KBarPortal,
@@ -8,14 +8,13 @@ import {
 } from 'kbar';
 import { useRouter } from 'next/router';
 import MenuButton from '@/components/menu/menuButton';
-import MenuContent from '@/components/menu/menuContent';
+import MenuItems from '@/components/menu/menuItems';
 import { social } from '@/utils/social';
 import { useTheme } from '@/hooks/useTheme';
 
 const Menu = ({ children }) => {
     const { setTheme, removeTheme } = useTheme();
     const { push } = useRouter();
-    const lazyRootRef = useRef(null);
 
     const socialActions = social.map(({ id, name, url }) => ({
         id,
@@ -109,10 +108,8 @@ const Menu = ({ children }) => {
             <KBarPortal>
                 <KBarPositioner className="z-30 bg-slate-50/80 backdrop-blur-sm dark:bg-slate-800/80">
                     <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-lg bg-beige drop-shadow-2xl dark:bg-slate-900">
-                        <div ref={lazyRootRef}>
-                            <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal outline-none placeholder:text-slate-400 text-slate-900 dark:border-slate-800 dark:text-white" />
-                            <MenuContent ref={lazyRootRef} />
-                        </div>
+                        <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal outline-none placeholder:text-slate-400 text-slate-900 dark:border-slate-800 dark:text-white" />
+                        <MenuItems />
                     </KBarAnimator>
                 </KBarPositioner>
             </KBarPortal>

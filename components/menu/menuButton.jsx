@@ -1,8 +1,9 @@
 import { useKBar } from 'kbar';
 
+const MENU_TEXT = 'MENU';
+
 const MenuButton = () => {
     const kbar = useKBar();
-    const MENU_TEXT = 'MENU';
 
     const toggleMenu = () => {
         kbar.query.toggle();

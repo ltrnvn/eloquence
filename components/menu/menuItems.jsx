@@ -1,9 +1,9 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { KBarResults, useMatches } from 'kbar';
 import MenuCategory from '@/components/menu/menuCategory';
-import Image from 'next/image';
+import MenuIcon from '@/components/menu/menuIcon';
 
-const MenuItems = forwardRef(function Items(props, ref) {
+const MenuItems = (props) => {
     const { results } = useMatches();
 
     return (
@@ -25,14 +25,9 @@ const MenuItems = forwardRef(function Items(props, ref) {
                     >
                         {item.iconSource && (
                             <div className="mr-3 flex">
-                                <Image
-                                    lazyRoot={ref}
-                                    lazyBoundary="100%"
-                                    src={item.iconSource}
-                                    width={16}
-                                    height={16}
-                                    quality={100}
-                                    alt={item.iconDescription}
+                                <MenuIcon
+                                    source={item.iconSource}
+                                    description={item.iconDescription}
                                 />
                             </div>
                         )}
@@ -47,6 +42,6 @@ const MenuItems = forwardRef(function Items(props, ref) {
             }}
         />
     );
-});
+};
 
 export default MenuItems;
