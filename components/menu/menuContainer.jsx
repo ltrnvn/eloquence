@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
     KBarProvider,
     KBarPortal,
@@ -9,28 +9,13 @@ import {
 import { useRouter } from 'next/router';
 import MenuButton from '@/components/menu/menuButton';
 import MenuContent from '@/components/menu/menuContent';
-import { useLocalStorageValue } from '@react-hookz/web';
 import { social } from '@/utils/social';
+import { useTheme } from '@/hooks/useTheme';
 
 const Menu = ({ children }) => {
-    const [theme, setTheme, removeTheme] = useLocalStorageValue(
-        'theme',
-        undefined
-    );
+    const { setTheme, removeTheme } = useTheme();
     const { push } = useRouter();
     const lazyRootRef = useRef(null);
-
-    useEffect(() => {
-        if (
-            theme === 'dark' ||
-            (!theme &&
-                window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [theme]);
 
     const socialActions = social.map(({ id, name, url }) => ({
         id,
