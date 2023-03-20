@@ -5,10 +5,9 @@ import ExperienceItem from '@/components/experiences/experienceItem';
 const Experiences = () => {
     return (
         <>
-            {experiences &&
-                experiences.map((experience, i) => (
-                    <ExperienceItem experience={experience} key={i} />
-                ))}
+            {experiences?.map((experience, i) => (
+                <ExperienceItem experience={experience} key={i} />
+            ))}
         </>
     );
 };
