@@ -7,13 +7,13 @@ export const useToast = () => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setShowToast(true);
-            toast('This site is still under development.');
+            toast();
         }, 1000);
+
         return () => {
             clearTimeout(timeout);
             toast.remove();
         };
-    }, [showToast]);
-
+    }, [showToast]);      
     return showToast;
 };

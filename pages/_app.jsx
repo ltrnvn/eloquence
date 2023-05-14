@@ -11,9 +11,12 @@ import H2Title from '@/components/base/h2Title';
 import H3Title from '@/components/base/h3Title';
 import Paragraph from '@/components/base/paragraph';
 import Toast from '@/components/toast';
+import Key from '@/components/key';
 import { DefaultSeo } from 'next-seo';
+import { useEffect, useState } from 'react';
 
 const _app = ({ Component, pageProps }) => {
+    const [osKey, setOsKey] = useState('')
     let itemCount = 0;
     const MDXComponents = {
         h1: (props) => <H1Title {...props} itemCount={itemCount++} />,
@@ -23,6 +26,12 @@ const _app = ({ Component, pageProps }) => {
         a: ExternalLink,
         em: (props) => <em {...props} className="font-serif italic text-xl" />,
     };
+
+    useEffect(() => {
+        const isMac = window.navigator?.userAgentData?.platform.indexOf('Mac') == -1
+        const key = isMac ? '⌘' : 'Ctrl'
+        setOsKey(key)
+    }, [])
 
     return (
         <MDXProvider components={MDXComponents}>
@@ -53,7 +62,9 @@ const _app = ({ Component, pageProps }) => {
                 }}
             />
             <Component {...pageProps} />
-            <Toast />
+            <Toast>
+                Use <Key character={osKey}/> + <Key character="k"/> to open command bar.
+            </Toast>
         </MDXProvider>
     );
 };
