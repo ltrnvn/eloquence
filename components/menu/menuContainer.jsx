@@ -103,10 +103,7 @@ const Menu = ({ children }) => {
             keywords: 'code',
             section: 'Utilities',
             perform: () =>
-                window.open(
-                    'https://github.com/Ephalys/portfolio-next',
-                    '_blank'
-                ),
+                window.open('https://github.com/ltrnvn/eloquence', '_blank'),
         },
     ];
 
