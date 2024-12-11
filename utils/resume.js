@@ -1,6 +1,13 @@
 const resumeExperiences = [
     {
         title: 'Frontend engineer',
+        company: 'Patrowl',
+        date: '2023 — now',
+        contract: 'Permanent',
+        description: [],
+    },
+    {
+        title: 'Frontend engineer',
         company: 'Hager',
         date: '2020 — 2023',
         contract: 'Apprenticeship & contract',
