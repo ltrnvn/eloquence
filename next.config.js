@@ -12,7 +12,7 @@ module.exports = withMDX({
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     images: {
         formats: ['image/avif', 'image/webp'],
-        domains: ['i.scdn.co'],
+        domains: ['image-cdn-ak.spotifycdn.com', 'image-cdn-fa.spotifycdn.com'],
     },
     webpack: (config, { isServer }) => {
         if (isServer) {
