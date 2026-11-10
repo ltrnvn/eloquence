@@ -12,8 +12,7 @@ module.exports = withMDX({
         formats: ['image/avif', 'image/webp'],
         qualities: [75, 100],
         remotePatterns: [
-            { protocol: 'https', hostname: 'image-cdn-ak.spotifycdn.com' },
-            { protocol: 'https', hostname: 'image-cdn-fa.spotifycdn.com' },
+            { protocol: 'https', hostname: '*.mzstatic.com' },
         ],
     },
 });
