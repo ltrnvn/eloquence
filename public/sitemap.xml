@@ -1,18 +1,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tranvanleon.com//games</loc>
+    <loc>https://www.tranvanleon.com/games</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://tranvanleon.com/</loc>
+    <loc>https://www.tranvanleon.com</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://tranvanleon.com//playlists</loc>
+    <loc>https://www.tranvanleon.com/playground</loc>
     <changefreq>hourly</changefreq>
   </url>
   <url>
-    <loc>https://tranvanleon.com//resume</loc>
+    <loc>https://www.tranvanleon.com/playlists</loc>
+    <changefreq>hourly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.tranvanleon.com/resume</loc>
     <changefreq>hourly</changefreq>
   </url>
 </urlset>

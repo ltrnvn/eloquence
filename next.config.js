@@ -1,8 +1,6 @@
 const withMDX = require('@next/mdx')({
     extension: /\.mdx?$/,
     options: {
-        remarkPlugins: [],
-        rehypePlugins: [],
         providerImportSource: '@mdx-js/react',
     },
 });
@@ -12,13 +10,10 @@ module.exports = withMDX({
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     images: {
         formats: ['image/avif', 'image/webp'],
-        domains: ['image-cdn-ak.spotifycdn.com', 'image-cdn-fa.spotifycdn.com'],
-    },
-    webpack: (config, { isServer }) => {
-        if (isServer) {
-            require('./utils/sitemap');
-        }
-
-        return config;
+        qualities: [75, 100],
+        remotePatterns: [
+            { protocol: 'https', hostname: 'image-cdn-ak.spotifycdn.com' },
+            { protocol: 'https', hostname: 'image-cdn-fa.spotifycdn.com' },
+        ],
     },
 });

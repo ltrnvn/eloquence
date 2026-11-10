@@ -1,5 +1,8 @@
 const fs = require('fs');
-const globby = require('globby');
+
+const WEBSITE_URL = (
+    process.env.WEBSITE_URL ?? 'https://www.tranvanleon.com'
+).replace(/\/$/, '');
 
 function addPage(page) {
     const path = page
@@ -9,18 +12,19 @@ function addPage(page) {
     const route = path === '/index' ? '' : path;
 
     return `  <url>
-    <loc>${`${process.env.WEBSITE_URL}${route}`}</loc>
+    <loc>${WEBSITE_URL}${route}</loc>
     <changefreq>hourly</changefreq>
   </url>`;
 }
 
-async function generateSitemap() {
+function generateSitemap() {
     // Ignore Next.js specific files (e.g., _app.js) and API routes.
-    const pages = await globby([
-        'pages/**/*{.jsx,.mdx}',
-        '!pages/_*.jsx',
-        '!pages/api',
-    ]);
+    const pages = fs
+        .globSync('pages/**/*.{jsx,mdx}', {
+            exclude: (path) =>
+                /^_/.test(path.split('/').pop()) || path.startsWith('pages/api'),
+        })
+        .sort();
     const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map(addPage).join('\n')}
 </urlset>`;

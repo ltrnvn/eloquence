@@ -12,10 +12,10 @@ import H3Title from '@/components/base/h3Title';
 import Paragraph from '@/components/base/paragraph';
 import Toast from '@/components/toast';
 import Key from '@/components/key';
-import { DefaultSeo } from 'next-seo';
+import { generateDefaultSeo } from 'next-seo/pages';
 import { useEffect, useState } from 'react';
 
-const _app = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }) => {
     const [osKey, setOsKey] = useState('')
     let itemCount = 0;
     const MDXComponents = {
@@ -30,6 +30,8 @@ const _app = ({ Component, pageProps }) => {
     useEffect(() => {
         const isMac = window.navigator?.userAgentData?.platform.indexOf('Mac') == -1
         const key = isMac ? '⌘' : 'Ctrl'
+        // Depends on the browser, so it can only be read after hydration.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setOsKey(key)
     }, [])
 
@@ -52,15 +54,15 @@ const _app = ({ Component, pageProps }) => {
                     content="Léon Tran-Van"
                 />
                 <link rel="icon" href="/favicon.ico" />
+                {generateDefaultSeo({
+                    openGraph: {
+                        type: 'website',
+                        locale: 'en_EN',
+                        url: 'https://www.tranvanleon.com/',
+                        site_name: 'Léon Tran-Van',
+                    },
+                })}
             </Head>
-            <DefaultSeo
-                openGraph={{
-                    type: 'website',
-                    locale: 'en_EN',
-                    url: 'https://www.tranvanleon.com/',
-                    site_name: 'Léon Tran-Van',
-                }}
-            />
             <Component {...pageProps} />
             <Toast>
                 Use <Key character={osKey}/> + <Key character="k"/> to open command bar.
@@ -69,4 +71,4 @@ const _app = ({ Component, pageProps }) => {
     );
 };
 
-export default _app;
+export default App;

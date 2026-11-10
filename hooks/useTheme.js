@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { useLocalStorageValue } from '@react-hookz/web';
 
 export const useTheme = () => {
-    const [theme, setTheme, removeTheme] = useLocalStorageValue(
-        'theme',
-        undefined
-    );
+    const {
+        value: theme,
+        set: setTheme,
+        remove: removeTheme,
+    } = useLocalStorageValue('theme', { initializeWithValue: false });
 
     useEffect(() => {
         if (

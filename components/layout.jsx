@@ -1,7 +1,8 @@
 import React from 'react';
 import Footer from './footer';
 import MenuContainer from '@/components/menu/menuContainer';
-import { NextSeo } from 'next-seo';
+import Head from 'next/head';
+import { generateNextSeo } from 'next-seo/pages';
 
 const DEFAULT_TITLE =
     'Léon Tran-Van — Frontend engineer with a designer soul curbed by color blindness';
@@ -32,13 +33,15 @@ const OPENGRAPH_CONFIG = {
 const Layout = ({ children, SEOTitle }) => {
     return (
         <>
-            <NextSeo
-                title={SEOTitle}
-                titleTemplate="%s — Léon Tran-Van"
-                defaultTitle={DEFAULT_TITLE}
-                description={DESCRIPTION}
-                openGraph={OPENGRAPH_CONFIG}
-            />
+            <Head>
+                {generateNextSeo({
+                    title: SEOTitle,
+                    titleTemplate: '%s — Léon Tran-Van',
+                    defaultTitle: DEFAULT_TITLE,
+                    description: DESCRIPTION,
+                    openGraph: OPENGRAPH_CONFIG,
+                })}
+            </Head>
             <main className="max-w-2xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
                 <MenuContainer />
                 {children}

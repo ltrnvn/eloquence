@@ -1,13 +1,13 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
+import Pc from '@/components/svg/pc';
+import Phone from '@/components/svg/phone';
+import Playstation from '@/components/svg/playstation';
 
-const getIconComponent = (name) =>
-    dynamic(() => import(`@/components/svg/${name}`), {
-        ssr: false,
-    });
+const ICONS = { pc: Pc, phone: Phone, playstation: Playstation };
 
 const RichListIcon = ({ icon }) => {
-    const IconComponent = getIconComponent(icon);
+    const IconComponent = ICONS[icon];
+    if (!IconComponent) return null;
 
     return (
         <div className="ml-auto">

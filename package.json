@@ -1,32 +1,37 @@
 {
     "private": true,
+    "engines": {
+        "node": ">=24"
+    },
     "scripts": {
+        "predev": "node --env-file-if-exists=.env utils/sitemap.js",
         "dev": "next dev",
+        "prebuild": "node --env-file-if-exists=.env utils/sitemap.js",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "eslint ."
     },
     "dependencies": {
         "@fontsource/heebo": "^4.5.12",
         "@fontsource/newsreader": "^4.5.6",
-        "@mdx-js/loader": "^2.1.2",
-        "@next/mdx": "^12.2.3",
-        "@react-hookz/web": "^15.0.1",
-        "kbar": "^0.1.0-beta.36",
-        "next": "latest",
-        "next-seo": "^5.5.0",
-        "react": "17.0.2",
-        "react-device-detect": "^2.2.2",
-        "react-dom": "17.0.2",
+        "@mdx-js/loader": "^3.1.1",
+        "@mdx-js/react": "^3.1.1",
+        "@next/mdx": "^16.4.6",
+        "@react-hookz/web": "^26.1.0",
+        "kbar": "^1.0.0",
+        "next": "^16.4.6",
+        "next-seo": "^7.3.0",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
         "react-feather": "^2.0.10",
-        "react-hot-toast": "^2.3.0",
+        "react-hot-toast": "^2.6.1",
         "tailwindcss-animation-delay": "^1.0.7"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.8",
-        "eslint": "^8.22.0",
-        "eslint-config-next": "12.2.5",
-        "eslint-config-prettier": "^8.5.0",
+        "eslint": "^9.39.5",
+        "eslint-config-next": "^16.4.6",
+        "eslint-config-prettier": "^10.1.8",
         "postcss": "^8.4.14",
         "tailwindcss": "^3.1.7"
     }
