@@ -41,7 +41,7 @@ const Layout = ({ children, SEOTitle }) => {
                     openGraph: OPENGRAPH_CONFIG,
                 })}
             </Head>
-            <main>
+            <main className="page-content">
                 {children}
                 <Footer />
             </main>
