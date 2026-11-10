@@ -20,7 +20,7 @@ const Toast = ({ children }) => {
         <Toaster containerClassName="!inset-y-8" toastOptions={TOAST_OPTIONS}>
             {(toast) => (
                 <div
-                    className="flex p-4 text-white bg-slate-700 rounded-lg shadow-lg animate-enter animate-exit dark:bg-slate-700 dark:text-white"
+                    className="flex p-4 text-foreground bg-surface border border-rule rounded-xl shadow-2xl shadow-black/10 animate-enter animate-exit dark:shadow-black/60"
                     style={toastContainerStyles(toast)}
                 >
                     <p className="px-2">{children}</p>

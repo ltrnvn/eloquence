@@ -9,13 +9,13 @@ const ExternalLink = ({ size, link, text }) => {
                 href={link}
                 rel="noreferrer"
                 target="_blank"
-                className="group flex items-center overflow-hidden underline underline-offset-2 decoration-slate-600 transition-decoration duration-300 hover:decoration-slate-400 dark:hover:decoration-white"
+                className="group flex items-center overflow-hidden underline underline-offset-2 decoration-muted transition-decoration duration-300 hover:decoration-heading"
             >
                 {text}
                 <ArrowUpRight
                     width={iconSize}
                     height={iconSize}
-                    className="ml-0.5 inline -translate-y-[2px] text-slate-600 transition-colors duration-300 group-hover:text-slate-400 dark:text-slate-400 dark:group-hover:text-white"
+                    className="ml-0.5 inline -translate-y-[2px] text-muted transition-colors duration-300 group-hover:text-heading"
                 />
             </a>
         </span>

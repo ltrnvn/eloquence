@@ -5,7 +5,7 @@ const Footer = () => {
     const randomQuote = useRandomQuote();
 
     return (
-        <footer className="py-4 mt-12 sm:mt-28 text-sm text-slate-400 border-t border-slate-200 dark:border-slate-600">
+        <footer className="py-4 mt-12 sm:mt-28 text-sm text-muted border-t border-rule">
             <p className="max-w-2xl mx-auto">{randomQuote}</p>
         </footer>
     );

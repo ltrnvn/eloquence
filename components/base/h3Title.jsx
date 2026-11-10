@@ -6,7 +6,7 @@ const H3Title = ({ itemCount, children }) => {
 
     return (
         <h3
-            className="mt-12 mb-6 animate-enter opacity-0 text-slate-400"
+            className="mt-12 mb-6 animate-enter opacity-0 text-muted"
             style={animationDelay}
         >
             {children}

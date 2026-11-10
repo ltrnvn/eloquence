@@ -7,7 +7,6 @@ import {
     KBarSearch,
 } from 'kbar';
 import { useRouter } from 'next/router';
-import MenuButton from '@/components/menu/menuButton';
 import MenuItems from '@/components/menu/menuItems';
 import { social } from '@/utils/social';
 import { useTheme } from '@/hooks/useTheme';
@@ -110,14 +109,13 @@ const Menu = ({ children }) => {
     return (
         <KBarProvider actions={[...actions, ...socialActions]}>
             <KBarPortal>
-                <KBarPositioner className="z-30 bg-slate-50/80 backdrop-blur-sm dark:bg-slate-800/80">
-                    <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-lg bg-beige drop-shadow-2xl dark:bg-slate-900">
-                        <KBarSearch className="font-md w-full border-b border-slate-100 bg-transparent py-3 px-4 font-normal outline-none placeholder:text-slate-400 text-slate-900 dark:border-slate-800 dark:text-white" />
+                <KBarPositioner className="z-30 bg-white/80 backdrop-blur-sm dark:bg-[#111]/80">
+                    <KBarAnimator className="mx-auto w-full max-w-xl overflow-hidden rounded-xl border border-rule bg-surface shadow-2xl shadow-black/10 dark:shadow-black/60">
+                        <KBarSearch className="font-md w-full border-b border-rule bg-transparent py-3 px-4 font-normal outline-none placeholder:text-muted text-heading" />
                         <MenuItems />
                     </KBarAnimator>
                 </KBarPositioner>
             </KBarPortal>
-            <MenuButton />
             {children}
         </KBarProvider>
     );

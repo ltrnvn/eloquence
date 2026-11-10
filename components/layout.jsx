@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from './footer';
-import MenuContainer from '@/components/menu/menuContainer';
 import Head from 'next/head';
 import { generateNextSeo } from 'next-seo/pages';
 
@@ -42,8 +41,7 @@ const Layout = ({ children, SEOTitle }) => {
                     openGraph: OPENGRAPH_CONFIG,
                 })}
             </Head>
-            <main className="max-w-2xl mx-auto px-4 py-12 sm:pt-40 sm:pb-28">
-                <MenuContainer />
+            <main>
                 {children}
                 <Footer />
             </main>

@@ -18,9 +18,7 @@ const MenuItems = (props) => {
                     <div
                         {...props}
                         className={`flex items-center cursor-pointer px-4 py-2 ${
-                            active
-                                ? 'bg-slate-100 dark:bg-slate-700'
-                                : 'bg-beige dark:bg-slate-900'
+                            active ? 'bg-nav-hover' : 'bg-surface'
                         }`}
                     >
                         {item.iconSource && (
@@ -33,7 +31,7 @@ const MenuItems = (props) => {
                         )}
                         {item.name}
                         {item.shortcut && (
-                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border bg-slate-200 border-slate-300 dark:bg-slate-900 dark:border-slate-700">
+                            <div className="flex h-6 w-6 ml-auto items-center justify-center rounded-md text-xs transition-colors border border-rule bg-background">
                                 {item.shortcut}
                             </div>
                         )}

@@ -6,7 +6,7 @@ const H1Title = ({ itemCount, children }) => {
 
     return (
         <h1
-            className="font-bold text-h1 text-slate-800 animate-enter opacity-0 dark:text-white"
+            className="font-bold text-h1 text-heading animate-enter opacity-0"
             style={animationDelay}
         >
             {children}

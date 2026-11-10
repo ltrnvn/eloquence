@@ -8,7 +8,7 @@ const RichList = ({ items }) => {
             {items?.map((item, i) => (
                 <li
                     key={i}
-                    className="border-b-[1px] border-slate-700 last:border-0 opacity-0 animate-enter "
+                    className="border-b-[1px] border-rule last:border-0 opacity-0 animate-enter "
                     style={{ animationDelay: (i + 2) * BASE_DELAY + 'ms' }}
                 >
                     <RichListItem item={item} />

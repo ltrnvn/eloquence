@@ -12,7 +12,7 @@ const RichListIcon = ({ icon }) => {
     return (
         <div className="ml-auto">
             <IconComponent
-                className="fill-slate-800 dark:fill-white"
+                className="fill-heading"
                 width={18}
                 height={18}
             />

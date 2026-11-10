@@ -12,6 +12,8 @@ import H3Title from '@/components/base/h3Title';
 import Paragraph from '@/components/base/paragraph';
 import Toast from '@/components/toast';
 import Key from '@/components/key';
+import Header from '@/components/header';
+import MenuContainer from '@/components/menu/menuContainer';
 import { generateDefaultSeo } from 'next-seo/pages';
 import { useEffect, useState } from 'react';
 
@@ -63,9 +65,14 @@ const App = ({ Component, pageProps }) => {
                     },
                 })}
             </Head>
-            <Component {...pageProps} />
+            {/* Kept outside pages so the header persists across navigations */}
+            <div className="site-shell">
+                <MenuContainer />
+                <Header />
+                <Component {...pageProps} />
+            </div>
             <Toast>
-                Use <Key character={osKey}/> + <Key character="k"/> to open command bar.
+                Use <Key character={osKey}/> + <Key character="k"/> to open command bar
             </Toast>
         </MDXProvider>
     );

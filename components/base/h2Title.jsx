@@ -6,7 +6,7 @@ const H2Title = ({ itemCount, children }) => {
 
     return (
         <h2
-            className="text-lg text-black animate-enter opacity-0 dark:text-white"
+            className="text-lg text-heading animate-enter opacity-0"
             style={animationDelay}
         >
             {children}

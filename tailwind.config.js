@@ -10,7 +10,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                beige: '#fdfdf3',
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
+                heading: 'var(--heading)',
+                muted: 'var(--muted)',
+                surface: 'var(--surface)',
+                rule: 'var(--rule)',
+                'nav-hover': 'var(--nav-hover)',
             },
             fontFamily: {
                 sans: ['Heebo', ...defaultTheme.fontFamily.sans],
