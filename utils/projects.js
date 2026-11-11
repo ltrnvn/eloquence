@@ -11,7 +11,7 @@ export const projects = [
     },
     {
         name: "Classicat's",
-        description: 'My first react website, done in 2021',
+        description: 'My first React website, done in 2021',
         url: 'https://classicats.netlify.app/',
     },
 ];

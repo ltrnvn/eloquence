@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const WEBSITE_URL = (
-    process.env.WEBSITE_URL ?? 'https://www.tranvanleon.com'
+    process.env.WEBSITE_URL ?? 'https://www.leontranvan.com'
 ).replace(/\/$/, '');
 
 function addPage(page) {

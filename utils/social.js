@@ -16,7 +16,7 @@ export const social = [
     },
     {
         id: 'youtube',
-        name: 'Youtube',
+        name: 'YouTube',
         url: 'https://youtube.com/ephalys',
     },
 ];

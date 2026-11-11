@@ -18,7 +18,7 @@ const resumeExperiences = [
             `Contribute to resolve interface issues and technical choices tailored to the project`,
             `Awareness of cross-browser compatibility issues and client-side performance considerations`,
             `Advanced knowledge of web technologies and UI/UX standards`,
-            `Optimization and performances (tree-shaking, packages, build reports)`,
+            `Optimization and performance (tree-shaking, packages, build reports)`,
             `Code refactoring, pair programming, technology watch`,
             `Agile Scrum organization`,
         ],
