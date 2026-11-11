@@ -9,12 +9,12 @@ const DESCRIPTION =
     'Building curated projects and beautiful interfaces with the benefits of cutting-edge technology.';
 
 const OPENGRAPH_CONFIG = {
-    url: 'https://www.tranvanleon.com/',
+    url: 'https://www.leontranvan.com/',
     title: DEFAULT_TITLE,
     description: DESCRIPTION,
     images: [
         {
-            url: 'https://www.tranvanleon.com/cover.png',
+            url: 'https://www.leontranvan.com/cover.png',
             width: 1600,
             height: 1010,
         },

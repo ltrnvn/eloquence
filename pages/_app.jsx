@@ -55,12 +55,15 @@ const App = ({ Component, pageProps }) => {
                     name="apple-mobile-web-app-title"
                     content="Léon Tran-Van"
                 />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" sizes="48x48" />
+                {/* Google search results need a square icon in a multiple of 48px */}
+                <link rel="icon" href="/icon.png" type="image/png" sizes="192x192" />
+                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 {generateDefaultSeo({
                     openGraph: {
                         type: 'website',
                         locale: 'en_EN',
-                        url: 'https://www.tranvanleon.com/',
+                        url: 'https://www.leontranvan.com/',
                         site_name: 'Léon Tran-Van',
                     },
                 })}

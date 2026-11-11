@@ -5,7 +5,7 @@
 
 The purpose of this site is to present my universe to the world with well-chosen words.
 
-It is an experimentation of [Next.js](https://nextjs.org/) and [Tailwind](tailwindcss.com), deployed on [Vercel](https://vercel.com). See full [Demo](https://www.tranvanleon.com) here.
+It is an experimentation of [Next.js](https://nextjs.org/) and [Tailwind](tailwindcss.com), deployed on [Vercel](https://vercel.com). See full [Demo](https://www.leontranvan.com) here.
 
 ## Getting started
 
