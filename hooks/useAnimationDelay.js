@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
-export const BASE_DELAY = 100;
+export const BASE_DELAY = 80;
 export const MAX_ITEMS = 5;
 export const MAX_DELAY = (MAX_ITEMS + 1) * BASE_DELAY;
 
 export default function useAnimationDelay(itemCount) {
     return useMemo(() => {
-        //If 5+ items are rendered, delay will not exceed 600ms
+        // Staggered by 80ms like haydenbleasel.com; capped at 480ms after 5 items
         const delay =
             (itemCount < MAX_ITEMS ? itemCount + 1 : MAX_ITEMS + 1) *
             BASE_DELAY;

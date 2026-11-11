@@ -32,7 +32,7 @@ module.exports = {
                 menu: ['5rem', '1'],
             },
             animation: {
-                enter: 'enter 0.6s forwards',
+                enter: 'enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards',
                 exit: 'exit 0.6s forwards',
             },
             keyframes: {
