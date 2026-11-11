@@ -1,10 +1,26 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
+// Runs before the first paint so a dark theme doesn't flash white while
+// React loads. Mirrors useTheme: the stored value is JSON ("dark" / "light"),
+// and no value means "follow the system".
+const setInitialTheme = `(function () {
+    try {
+        const stored = localStorage.getItem('theme');
+        const theme = stored ? JSON.parse(stored) : null;
+        const dark = theme === 'dark' ||
+            (!theme && matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+    } catch (e) {}
+})();`;
+
 class Document extends NextDocument {
     render() {
         return (
             <Html lang="en" className="scroll-smooth">
                 <Head>
+                    <script
+                        dangerouslySetInnerHTML={{ __html: setInitialTheme }}
+                    />
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"
