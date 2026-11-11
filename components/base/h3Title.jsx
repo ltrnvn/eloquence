@@ -1,14 +1,8 @@
 import React from 'react';
-import useAnimationDelay from '@/hooks/useAnimationDelay';
 
-const H3Title = ({ itemCount, children }) => {
-    const animationDelay = useAnimationDelay(itemCount);
-
+const H3Title = ({ children }) => {
     return (
-        <h3
-            className="mt-12 mb-6 animate-enter opacity-0 text-muted"
-            style={animationDelay}
-        >
+        <h3 className="mt-12 mb-6 text-muted">
             {children}
         </h3>
     );

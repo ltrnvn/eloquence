@@ -1,11 +1,8 @@
 import React from 'react';
-import useAnimationDelay from '@/hooks/useAnimationDelay';
 
-const Paragraph = ({ itemCount, children }) => {
-    const animationDelay = useAnimationDelay(itemCount);
-
+const Paragraph = ({ children }) => {
     return (
-        <p className="mb-6 animate-enter opacity-0" style={animationDelay}>
+        <p className="mb-6">
             {children}
         </p>
     );

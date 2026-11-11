@@ -17,17 +17,21 @@ import MenuContainer from '@/components/menu/menuContainer';
 import { generateDefaultSeo } from 'next-seo/pages';
 import { useEffect, useState } from 'react';
 
-const App = ({ Component, pageProps }) => {
+// Defined once: components recreated on each render would make React remount
+// the whole page content (and replay its enter animation) on every update.
+const Emphasis = (props) => <em {...props} className="font-serif italic text-xl" />;
+
+const MDXComponents = {
+    h1: H1Title,
+    h2: H2Title,
+    h3: H3Title,
+    p: Paragraph,
+    a: ExternalLink,
+    em: Emphasis,
+};
+
+const App = ({ Component, pageProps, router }) => {
     const [osKey, setOsKey] = useState('')
-    let itemCount = 0;
-    const MDXComponents = {
-        h1: (props) => <H1Title {...props} itemCount={itemCount++} />,
-        h2: (props) => <H2Title {...props} itemCount={itemCount++} />,
-        h3: (props) => <H3Title {...props} itemCount={itemCount++} />,
-        p: (props) => <Paragraph {...props} itemCount={itemCount++} />,
-        a: ExternalLink,
-        em: (props) => <em {...props} className="font-serif italic text-xl" />,
-    };
 
     useEffect(() => {
         const isMac = window.navigator?.userAgentData?.platform.indexOf('Mac') == -1
@@ -36,6 +40,24 @@ const App = ({ Component, pageProps }) => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setOsKey(key)
     }, [])
+
+    // Leaving the landing page ends its entrance; pages opened from inside
+    // the site get a short crossfade instead (see globals.css).
+    useEffect(() => {
+        const root = document.documentElement;
+        const onStart = () => {
+            delete root.dataset.intro;
+        };
+        const onComplete = () => {
+            root.dataset.navigated = '';
+        };
+        router.events.on('routeChangeStart', onStart);
+        router.events.on('routeChangeComplete', onComplete);
+        return () => {
+            router.events.off('routeChangeStart', onStart);
+            router.events.off('routeChangeComplete', onComplete);
+        };
+    }, [router])
 
     return (
         <MDXProvider components={MDXComponents}>

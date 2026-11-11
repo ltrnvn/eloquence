@@ -13,6 +13,28 @@ const setInitialTheme = `(function () {
     } catch (e) {}
 })();`;
 
+// Like haydenbleasel.com: the home page plays its entrance only when someone
+// lands on it (new visit or reload). Coming from another page of the site or
+// going back in history shows it right away, and any key or click skips it.
+// Without JavaScript nothing is hidden, since the CSS depends on this flag.
+const setIntro = `(function () {
+    if (location.pathname !== '/') return;
+    const [navigation] = performance.getEntriesByType('navigation');
+    const internalNavigation = document.referrer &&
+        new URL(document.referrer).origin === location.origin;
+    if (navigation?.type === 'back_forward' ||
+        (navigation?.type !== 'reload' && internalNavigation)) return;
+
+    const root = document.documentElement;
+    root.dataset.intro = '';
+    const finishIntro = () => { delete root.dataset.intro; };
+    addEventListener('keydown', finishIntro, { once: true });
+    addEventListener('pointerdown', finishIntro, { once: true });
+    addEventListener('pageshow', (event) => {
+        if (event.persisted) finishIntro();
+    });
+})();`;
+
 class Document extends NextDocument {
     render() {
         return (
@@ -21,6 +43,7 @@ class Document extends NextDocument {
                     <script
                         dangerouslySetInnerHTML={{ __html: setInitialTheme }}
                     />
+                    <script dangerouslySetInnerHTML={{ __html: setIntro }} />
                     <link
                         rel="preconnect"
                         href="https://fonts.googleapis.com"

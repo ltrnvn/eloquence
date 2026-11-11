@@ -1,14 +1,8 @@
 import React from 'react';
-import useAnimationDelay from '@/hooks/useAnimationDelay';
 
-const H2Title = ({ itemCount, children }) => {
-    const animationDelay = useAnimationDelay(itemCount);
-
+const H2Title = ({ children }) => {
     return (
-        <h2
-            className="text-lg text-heading animate-enter opacity-0"
-            style={animationDelay}
-        >
+        <h2 className="text-lg text-heading">
             {children}
         </h2>
     );

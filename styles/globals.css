@@ -142,3 +142,51 @@
         }
     }
 }
+
+/* Entrance, like haydenbleasel.com: only on the home page when someone lands
+   on it (html[data-intro], set in _document). Blocks enter 80ms apart and the
+   footer fades in last. Fill is `backwards`, so nothing stays hidden. */
+@media (prefers-reduced-motion: no-preference) {
+    html[data-intro] .site-header,
+    html[data-intro] .page-content > * {
+        animation: site-enter 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+        animation-delay: var(--enter-delay, 0ms);
+    }
+
+    html[data-intro] .page-content > :nth-child(1) { --enter-delay: 80ms; }
+    html[data-intro] .page-content > :nth-child(2) { --enter-delay: 160ms; }
+    html[data-intro] .page-content > :nth-child(3) { --enter-delay: 240ms; }
+    html[data-intro] .page-content > :nth-child(4) { --enter-delay: 320ms; }
+    html[data-intro] .page-content > :nth-child(5) { --enter-delay: 400ms; }
+    html[data-intro] .page-content > :nth-child(n + 6) { --enter-delay: 480ms; }
+
+    html[data-intro] .page-content > footer {
+        animation-name: page-fade-in;
+        animation-duration: 400ms;
+    }
+
+    /* Moving between pages inside the site: a short crossfade instead. */
+    html[data-navigated] .page-content {
+        animation: page-fade-in 160ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+}
+
+@keyframes site-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

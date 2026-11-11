@@ -1,14 +1,8 @@
 import React from 'react';
-import useAnimationDelay from '@/hooks/useAnimationDelay';
 
-const H1Title = ({ itemCount, children }) => {
-    const animationDelay = useAnimationDelay(itemCount);
-
+const H1Title = ({ children }) => {
     return (
-        <h1
-            className="font-bold text-h1 text-heading animate-enter opacity-0"
-            style={animationDelay}
-        >
+        <h1 className="font-bold text-h1 text-heading">
             {children}
         </h1>
     );
